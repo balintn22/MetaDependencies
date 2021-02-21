@@ -1,7 +1,7 @@
-﻿using AssembliesByRepo.Logic.Space;
+﻿using AssInfo.Logic.Space;
 using System;
 
-namespace AssembliesByRepo.Logic
+namespace AssInfo.Logic
 {
     /// <summary>
     /// Helps to get information from .csproj files.

@@ -1,9 +1,9 @@
-﻿using AssembliesByRepo.Logic;
+﻿using AssInfo.Logic;
 using System;
 using System.Linq;
 using System.Reflection;
 
-namespace AssembliesByRepo
+namespace AssInfo
 {
     class Program
     {

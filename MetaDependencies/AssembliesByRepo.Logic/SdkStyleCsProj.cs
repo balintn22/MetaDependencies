@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Xml.Serialization;
 
-namespace AssembliesByRepo.Logic.Space
+namespace AssInfo.Logic.Space
 {
     // Code in this partial implementation is maintained manually.
 

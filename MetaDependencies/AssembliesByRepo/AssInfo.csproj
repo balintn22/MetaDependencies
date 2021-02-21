@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{9F7BECB6-2CB7-4E11-95CF-255CCED8695C}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>AssembliesByRepo</RootNamespace>
-    <AssemblyName>AssembliesByRepo</AssemblyName>
+    <RootNamespace>AssInfo</RootNamespace>
+    <AssemblyName>AssInfo</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -50,9 +50,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AssembliesByRepo.Logic\AssembliesByRepo.Logic.csproj">
+    <ProjectReference Include="..\AssembliesByRepo.Logic\AssInfo.Logic.csproj">
       <Project>{b34de84a-aecd-42dc-af78-1f540838f2c4}</Project>
-      <Name>AssembliesByRepo.Logic</Name>
+      <Name>AssInfo.Logic</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

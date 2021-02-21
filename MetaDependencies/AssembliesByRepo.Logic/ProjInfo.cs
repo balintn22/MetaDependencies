@@ -1,4 +1,4 @@
-﻿namespace AssembliesByRepo.Logic
+﻿namespace AssInfo.Logic
 {
     /// <summary>
     /// Represents information about a located assembly.

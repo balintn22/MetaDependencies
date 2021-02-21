@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AssembliesByRepo.Logic
+namespace AssInfo.Logic
 {
     public static class PathHelper
     {

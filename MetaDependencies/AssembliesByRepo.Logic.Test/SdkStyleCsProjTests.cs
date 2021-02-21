@@ -1,11 +1,11 @@
-using AssembliesByRepo.Logic.Space;
+using AssInfo.Logic.Space;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.IO;
 using System.Xml.Serialization;
 
-namespace AssembliesByRepo.Logic.Test
+namespace AssInfo.Logic.Test
 {
     [TestClass]
     public class SdkStyleCsProjTests

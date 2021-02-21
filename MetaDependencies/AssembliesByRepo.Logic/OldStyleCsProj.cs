@@ -3,7 +3,7 @@ using System.IO;
 using System.Linq;
 using System.Xml.Serialization;
 
-namespace AssembliesByRepo.Logic.Space
+namespace AssInfo.Logic.Space
 {
     /// <summary>
     /// Helper class for old style csproj files.

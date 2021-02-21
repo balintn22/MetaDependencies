@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssembliesByRepo", "AssembliesByRepo\AssembliesByRepo.csproj", "{9F7BECB6-2CB7-4E11-95CF-255CCED8695C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssInfo", "AssembliesByRepo\AssInfo.csproj", "{9F7BECB6-2CB7-4E11-95CF-255CCED8695C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AssembliesByRepo.Logic", "AssembliesByRepo.Logic\AssembliesByRepo.Logic.csproj", "{B34DE84A-AECD-42DC-AF78-1F540838F2C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AssInfo.Logic", "AssembliesByRepo.Logic\AssInfo.Logic.csproj", "{B34DE84A-AECD-42DC-AF78-1F540838F2C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssembliesByRepo.Logic.Test", "AssembliesByRepo.Logic.Test\AssembliesByRepo.Logic.Test.csproj", "{5DB9CD18-EEF4-469B-BFF8-14160EB22249}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssInfo.Logic.Test", "AssembliesByRepo.Logic.Test\AssInfo.Logic.Test.csproj", "{5DB9CD18-EEF4-469B-BFF8-14160EB22249}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
