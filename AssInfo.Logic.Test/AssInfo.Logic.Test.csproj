@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AssembliesByRepo.Logic\AssInfo.Logic.csproj" />
+    <ProjectReference Include="..\AssInfo.Logic\AssInfo.Logic.csproj" />
   </ItemGroup>
 
   <ItemGroup>

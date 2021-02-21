@@ -50,8 +50,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AssembliesByRepo.Logic\AssInfo.Logic.csproj">
-      <Project>{b34de84a-aecd-42dc-af78-1f540838f2c4}</Project>
+    <ProjectReference Include="..\AssInfo.Logic\AssInfo.Logic.csproj">
+      <Project>{a649a2e0-d765-4fd8-84e6-f47e8637fcb5}</Project>
       <Name>AssInfo.Logic</Name>
     </ProjectReference>
   </ItemGroup>
