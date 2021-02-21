@@ -2,11 +2,14 @@
 
 	<PropertyGroup>
 		<TargetFramework>netstandard2.0</TargetFramework>
+		<TargetFrameworks>netstandard2.0;netcoreapp3.1</TargetFrameworks>
 		<AssemblyName>AssembliesByRepo.Logic.Name</AssemblyName>
 		<RootNamespace>AssembliesByRepo.Logic.Space</RootNamespace>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<PublishPackage>true</PublishPackage>
 		<PackageId>AssembliesByRepo.Logic.Pack</PackageId>
 		<RepositoryUrl>AssembliesByRepo.Logic.PackRepoUrl</RepositoryUrl>
+		<Description>Description.</Description>
 	</PropertyGroup>
 
 </Project>

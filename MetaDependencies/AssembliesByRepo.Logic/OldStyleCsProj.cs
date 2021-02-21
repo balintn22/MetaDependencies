@@ -10,22 +10,30 @@ namespace AssembliesByRepo.Logic.Space
     /// </summary>
     public partial class OldStyleCsProj
     {
-        public static ProjInfo AssInfoFrom(string csProjPath)
+        public static ProjInfo ProjInfoFrom(string csProjPath)
         {
             using (var fileStream = File.Open(csProjPath, FileMode.Open))
             {
                 XmlSerializer serializer = new XmlSerializer(typeof(OldStyleCsProj.Project));
                 var parsed = (OldStyleCsProj.Project)serializer.Deserialize(fileStream);
-                ProjectPropertyGroup mainPropertyGroup = parsed.Items
+                ProjectPropertyGroup mainPG = parsed.Items
                     .Where(item => item.GetType() == typeof(OldStyleCsProj.ProjectPropertyGroup))
                     ?.Select(item => item as OldStyleCsProj.ProjectPropertyGroup)
                     .FirstOrDefault(propertyGroup => !string.IsNullOrWhiteSpace(propertyGroup.AssemblyName));
 
                 return new ProjInfo
                 {
-                    AssType = ResolveOutputType(mainPropertyGroup.OutputType),
-                    AssName = mainPropertyGroup.AssemblyName,
+                    AssType = ResolveOutputType(mainPG.OutputType),
+                    AssName = mainPG.AssemblyName,
                     CsProjPath = csProjPath,
+                    Description = mainPG.Description,
+                    GeneratePackage = mainPG.GeneratePackageOnBuildSpecified
+                        ? mainPG.GeneratePackageOnBuild
+                        : false,
+                    PackageId = mainPG.PackageId,
+                    RepositoryUrl = mainPG.RepositoryUrl,
+                    TargetFrameworks = mainPG.TargetFrameworkVersion
+                        ?? mainPG.TargetFrameworks,
                 };
             }
         }

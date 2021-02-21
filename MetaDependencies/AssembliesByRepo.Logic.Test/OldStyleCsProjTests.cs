@@ -14,7 +14,7 @@ namespace AssembliesByRepo.Logic.Test
         [DeploymentItem("OldStyleCsProjSample.xml")]
         public void AssInfoFrom_HappyCase()
         {
-            ProjInfo result = OldStyleCsProj.AssInfoFrom("OldStyleCsProjSample.xml");
+            ProjInfo result = OldStyleCsProj.ProjInfoFrom("OldStyleCsProjSample.xml");
 
             result.AssName.Should().Be("AssembliesByRepo");
             result.AssType.Should().Be(ProjInfo.AssTypes.Exe);

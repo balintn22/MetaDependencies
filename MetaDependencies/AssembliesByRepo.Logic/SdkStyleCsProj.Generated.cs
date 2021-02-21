@@ -56,15 +56,21 @@
 
             private string targetFrameworkField;
 
+            private string targetFrameworksField;
+
             private string assemblyNameField;
 
             private string rootNamespaceField;
 
             private bool generatePackageOnBuildField;
 
+            private bool publishPackageField;
+
             private string packageIdField;
 
             private string repositoryUrlField;
+
+            private string descriptionField;
 
             /// <remarks/>
             public string TargetFramework
@@ -76,6 +82,19 @@
                 set
                 {
                     this.targetFrameworkField = value;
+                }
+            }
+
+            /// <remarks/>
+            public string TargetFrameworks
+            {
+                get
+                {
+                    return this.targetFrameworksField;
+                }
+                set
+                {
+                    this.targetFrameworksField = value;
                 }
             }
 
@@ -119,6 +138,19 @@
             }
 
             /// <remarks/>
+            public bool PublishPackage
+            {
+                get
+                {
+                    return this.publishPackageField;
+                }
+                set
+                {
+                    this.publishPackageField = value;
+                }
+            }
+
+            /// <remarks/>
             public string PackageId
             {
                 get
@@ -141,6 +173,19 @@
                 set
                 {
                     this.repositoryUrlField = value;
+                }
+            }
+
+            /// <remarks/>
+            public string Description
+            {
+                get
+                {
+                    return this.descriptionField;
+                }
+                set
+                {
+                    this.descriptionField = value;
                 }
             }
         }

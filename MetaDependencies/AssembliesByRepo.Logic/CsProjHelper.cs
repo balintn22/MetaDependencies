@@ -10,10 +10,10 @@ namespace AssembliesByRepo.Logic
     {
         public static ProjInfo GetAssInfoFrom(string csProjPath)
         {
-            try { return OldStyleCsProj.AssInfoFrom(csProjPath); }
+            try { return OldStyleCsProj.ProjInfoFrom(csProjPath); }
             catch (Exception) { }
 
-            try { return SdkStyleCsProj.AssInfoFrom(csProjPath); }
+            try { return SdkStyleCsProj.ProjInfoFrom(csProjPath); }
             catch (Exception) { }
 
             throw new Exception("Uknown csproj file format or failed to parse csproj file.");

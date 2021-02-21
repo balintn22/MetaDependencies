@@ -10,20 +10,31 @@ namespace AssembliesByRepo.Logic.Space
     /// </summary>
     public partial class SdkStyleCsProj
     {
-        public static ProjInfo AssInfoFrom(string csProjPath)
+        public static ProjInfo ProjInfoFrom(string csProjPath)
         {
             using (var fileStream = File.Open(csProjPath, FileMode.Open))
             {
                 XmlSerializer serializer = new XmlSerializer(typeof(SdkStyleCsProj.Project));
                 var parsed = (SdkStyleCsProj.Project)serializer.Deserialize(fileStream);
+                var ppg = parsed.PropertyGroup;
+
+                string assName = string.IsNullOrWhiteSpace(ppg.AssemblyName)
+                    ? Path.GetFileName(csProjPath)?.Replace(".csproj", "")
+                    : ppg.AssemblyName;
 
                 return new ProjInfo
                 {
                     AssType = ProjInfo.AssTypes.Dll,
-                    AssName = string.IsNullOrWhiteSpace(parsed.PropertyGroup.AssemblyName)
-                        ? Path.GetFileName(csProjPath)
-                        : parsed.PropertyGroup.AssemblyName,
+                    AssName = assName,
                     CsProjPath = csProjPath,
+                    Description = ppg.Description,
+                    GeneratePackage = ppg.GeneratePackageOnBuild || ppg.PublishPackage,
+                    PackageId = ppg.GeneratePackageOnBuild || ppg.PublishPackage
+                        ? string.IsNullOrWhiteSpace(ppg.PackageId)
+                            ? assName : ppg.PackageId
+                        : null,
+                    RepositoryUrl = ppg.RepositoryUrl,
+                    TargetFrameworks = ppg.TargetFramework ?? ppg.TargetFrameworks,
                 };
             }
         }
