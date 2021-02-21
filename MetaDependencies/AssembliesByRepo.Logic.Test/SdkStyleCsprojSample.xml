@@ -4,6 +4,9 @@
 		<TargetFramework>netstandard2.0</TargetFramework>
 		<AssemblyName>AssembliesByRepo.Logic.Name</AssemblyName>
 		<RootNamespace>AssembliesByRepo.Logic.Space</RootNamespace>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<PackageId>AssembliesByRepo.Logic.Pack</PackageId>
+		<RepositoryUrl>AssembliesByRepo.Logic.PackRepoUrl</RepositoryUrl>
 	</PropertyGroup>
 
 </Project>

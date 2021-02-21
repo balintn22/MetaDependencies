@@ -5,18 +5,18 @@ namespace AssembliesByRepo.Logic
 {
     public interface ICrawler
     {
-        IEnumerable<AssInfo> Crawl(string path);
+        IEnumerable<ProjInfo> Crawl(string path);
     }
 
     public class Crawler : ICrawler
     {
-        public IEnumerable<AssInfo> Crawl(string path)
+        public IEnumerable<ProjInfo> Crawl(string path)
         {
             // Enumerate csprojs in the current folder
             string[] csProjs = Directory.GetFiles(path, "*.csproj");
             foreach (string csProj in csProjs)
             {
-                AssInfo assInfo;
+                ProjInfo assInfo;
                 try { assInfo = CsProjHelper.GetAssInfoFrom(csProj); }
                 catch { assInfo = null; }
 
@@ -28,7 +28,7 @@ namespace AssembliesByRepo.Logic
             string[] subDirs = Directory.GetDirectories(path);
             foreach (string subDir in subDirs)
             {
-                foreach(AssInfo assInfo in Crawl(Path.Combine(path, subDir)))
+                foreach(ProjInfo assInfo in Crawl(Path.Combine(path, subDir)))
                     yield return assInfo;
             }
         }

@@ -8,7 +8,7 @@ namespace AssembliesByRepo.Logic
     /// </summary>
     public static class CsProjHelper
     {
-        public static AssInfo GetAssInfoFrom(string csProjPath)
+        public static ProjInfo GetAssInfoFrom(string csProjPath)
         {
             try { return OldStyleCsProj.AssInfoFrom(csProjPath); }
             catch (Exception) { }

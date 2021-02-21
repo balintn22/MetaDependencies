@@ -8,7 +8,7 @@ namespace AssembliesByRepo
         static void Main(string[] args)
         {
             ICrawler crawler = new Crawler();
-            foreach (AssInfo assInfo in crawler.Crawl(Environment.CurrentDirectory))
+            foreach (ProjInfo assInfo in crawler.Crawl(Environment.CurrentDirectory))
             {
                 string relativePath = PathHelper.GetRelativePath(Environment.CurrentDirectory, assInfo.CsProjPath);
                 Console.WriteLine($"{assInfo.AssName}\t{assInfo.AssType}\t{relativePath}");

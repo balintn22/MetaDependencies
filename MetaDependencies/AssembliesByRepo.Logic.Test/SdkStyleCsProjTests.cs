@@ -14,10 +14,10 @@ namespace AssembliesByRepo.Logic.Test
         [DeploymentItem("SdkStyleCsprojSample.xml")]
         public void AssInfoFrom_HappyCase()
         {
-            AssInfo result = SdkStyleCsProj.AssInfoFrom("SdkStyleCsprojSample.xml");
+            ProjInfo result = SdkStyleCsProj.AssInfoFrom("SdkStyleCsprojSample.xml");
 
             result.AssName.Should().Be("AssembliesByRepo.Logic.Name");
-            result.AssType.Should().Be(AssInfo.AssTypes.Dll);
+            result.AssType.Should().Be(ProjInfo.AssTypes.Dll);
             result.CsProjPath.Should().Be("SdkStyleCsprojSample.xml");
         }
 
