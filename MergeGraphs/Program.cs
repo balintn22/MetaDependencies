@@ -12,6 +12,7 @@ namespace MergeGraphs
         private static IDgmlRepo _dgmlRepo;
         private static IMerger _merger;
         private static string _inputFolderPath;
+        private static bool _keepIndirectReferences = false;
 
         static void Main(string[] args)
         {
@@ -30,7 +31,8 @@ namespace MergeGraphs
             string[] dgmlsFilePaths = Directory.GetFiles(_inputFolderPath, "*.dgml");
             List<Dgml.DirectedGraph> graphs = dgmlsFilePaths.Select(f => _dgmlRepo.Load(f)).ToList();
             Dgml.DirectedGraph merged = _merger.Merge(graphs);
-            _dgmlRepo.Save(merged, "Merged.dgml");
+            Dgml.DirectedGraph withoutIndirectReferences = DiGraphHelper.RemoveShortcuts(merged);
+            _dgmlRepo.Save(withoutIndirectReferences, "Merged.dgml");
         }
 
         private static void ShowUsage()
@@ -38,7 +40,15 @@ namespace MergeGraphs
             string appName = Assembly.GetExecutingAssembly().GetName().Name;
 
             Console.WriteLine(
-                $"TODO"
+                $"{appName} merges a set of .dgml graphs into one.\n" +
+                $"\n" +
+                $"Usage:\n" +
+                $"  {appName} -indir=\"c:\\mydir\" [-keepindirects]\n" +
+                $"\n" +
+                $" where\n" +
+                $"  -indir         specifies the folder, containing the source .dgml files. *.dgml will be merged.\n" +
+                $"  -keepindirects If not specifeid, removes indirect assembly references, thus simplifying the graph.\n" +
+                $"                 If specified, indirect refences are kept."
             );
         }
 
@@ -51,6 +61,7 @@ namespace MergeGraphs
                 switch (argKeyValue[0].ToLower())
                 {
                     case "-indir": _inputFolderPath = argKeyValue[1]; break;
+                    case "-keepindirects": _keepIndirectReferences = true; break;
                 }
             }
         }

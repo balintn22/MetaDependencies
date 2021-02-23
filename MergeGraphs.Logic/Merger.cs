@@ -44,6 +44,7 @@ namespace MergeGraphs.Logic
                 .Where(n => !n.Label.ToLower().StartsWith("system."))
                 .Where(n => n.Label != "Unused assemblies?")
                 .Where(n => n.Label != "netstandard")
+                .Distinct()
                 .ToArray();
 
             var nodeIds = result.Nodes.Select(n => n.Id);
