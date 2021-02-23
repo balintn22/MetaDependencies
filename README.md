@@ -20,3 +20,24 @@ They should be placed next to BuildGRaphs.cmd or in the system path.
 
 ## MergeGraphs
 This tool loads all .dgml dependency graphs from a directory, merges them, and creates a merged output graph as a .dgml.
+Can keep or remove indirect assembly references, the latter to simplify the resultant graph.
+Use Visual Studio DGML Editor (can be installed from Visual Studio installer / Individual components) to view amnipulate the output.
+
+# Workflow / How to use
+I assume that your sources are cloned next to each other, in a single folder.
+To help working with a large number of code repos, I suggest using the [Meta tool](https://github.com/mateodelnorte/meta).
+Copy the above tools with their supporting .dll files to that root directory.
+
+If you want to find the projects
+ - where nuget packages are built
+ - that use different build target platforms
+run the AssInfo tool, and open the resulting text file in Excel.
+Check in the resultant file to git, so that you can monitor changes over time.
+
+If you want to understand assembly dependencies in your services, then
+ - edit the BuildGraphs.cmd file so that it runs assembly analysis on your service host assemblies
+ - run the BuildGraphs.cmd tool. When run without arguments, it creates a directory named "dependency-graphs"
+ - run the MergeGraphs tool like this
+   MergeGraphs -indir="dependency-graphs"
+ - open the resultant Merged.dgml with Visual Studio 2017+. Make sure that the DGML editor individual component is installed.
+ - re-layout, re-arrange, massage the output any way you like to understand assembly relationships.
