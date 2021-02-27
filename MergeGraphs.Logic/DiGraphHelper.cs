@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace MergeGraphs.Logic
 {
-    public class DiGraphHelper
+    public static class DiGraphHelper
     {
         /// <summary>
         /// Get a collection of directional neighbors.
@@ -53,7 +53,6 @@ namespace MergeGraphs.Logic
             // Build the initial set of long paths using paths of length 2.
             // Paths of length 2 are created from paths of length 1, extending them with each possible di-neighbor from their end.
             IEnumerable<DiNodePair> longPaths = new List<DiNodePair>();
-            int i = 0;
             foreach (DiNodePair pathOfLength1 in pathsOfLength1)
             {
                 // Extend this path to each di-neighbor of the endpoint.
