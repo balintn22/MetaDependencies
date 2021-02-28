@@ -19,5 +19,9 @@
         public static explicit operator Vector(Position position) => position.Vector;
 
         public static explicit operator Position(Vector vector) => new Position(vector.X, vector.Y);
+
+        public static Position operator +(Position p, Vector v) => new Position(p.X + v.X, p.Y + v.Y);
+
+        public static Position operator -(Position p, Vector v) => new Position(p.X - v.X, p.Y - v.Y);
     }
 }
