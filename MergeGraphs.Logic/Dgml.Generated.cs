@@ -23,13 +23,15 @@
 
             private DirectedGraphCategory[] categoriesField;
 
-            private DirectedGraphStyle[] stylesField;
-
             private DirectedGraphProperty[] propertiesField;
+
+            private DirectedGraphStyle[] stylesField;
 
             private string graphDirectionField;
 
-            private string layoutField;
+            private string xsdField;
+
+            private string xsiField;
 
             /// <remarks/>
             [System.Xml.Serialization.XmlArrayItemAttribute("Node", IsNullable = false)]
@@ -74,20 +76,6 @@
             }
 
             /// <remarks/>
-            [System.Xml.Serialization.XmlArrayItemAttribute("Style", IsNullable = false)]
-            public DirectedGraphStyle[] Styles
-            {
-                get
-                {
-                    return this.stylesField;
-                }
-                set
-                {
-                    this.stylesField = value;
-                }
-            }
-
-            /// <remarks/>
             [System.Xml.Serialization.XmlArrayItemAttribute("Property", IsNullable = false)]
             public DirectedGraphProperty[] Properties
             {
@@ -98,6 +86,20 @@
                 set
                 {
                     this.propertiesField = value;
+                }
+            }
+
+            /// <remarks/>
+            [System.Xml.Serialization.XmlArrayItemAttribute("Style", IsNullable = false)]
+            public DirectedGraphStyle[] Styles
+            {
+                get
+                {
+                    return this.stylesField;
+                }
+                set
+                {
+                    this.stylesField = value;
                 }
             }
 
@@ -117,15 +119,29 @@
 
             /// <remarks/>
             [System.Xml.Serialization.XmlAttributeAttribute()]
-            public string Layout
+            public string xsd
             {
                 get
                 {
-                    return this.layoutField;
+                    return this.xsdField;
                 }
                 set
                 {
-                    this.layoutField = value;
+                    this.xsdField = value;
+                }
+            }
+
+            /// <remarks/>
+            [System.Xml.Serialization.XmlAttributeAttribute()]
+            public string xsi
+            {
+                get
+                {
+                    return this.xsiField;
+                }
+                set
+                {
+                    this.xsiField = value;
                 }
             }
         }
@@ -139,13 +155,17 @@
 
             private string idField;
 
-            private string labelField;
-
             private string categoryField;
+
+            private string boundsField;
 
             private string iconField;
 
+            private string labelField;
+
             private string processorArchitectureField;
+
+            private string useManualLocationField;
 
             /// <remarks/>
             [System.Xml.Serialization.XmlAttributeAttribute()]
@@ -158,20 +178,6 @@
                 set
                 {
                     this.idField = value;
-                }
-            }
-
-            /// <remarks/>
-            [System.Xml.Serialization.XmlAttributeAttribute()]
-            public string Label
-            {
-                get
-                {
-                    return this.labelField;
-                }
-                set
-                {
-                    this.labelField = value;
                 }
             }
 
@@ -191,6 +197,20 @@
 
             /// <remarks/>
             [System.Xml.Serialization.XmlAttributeAttribute()]
+            public string Bounds
+            {
+                get
+                {
+                    return this.boundsField;
+                }
+                set
+                {
+                    this.boundsField = value;
+                }
+            }
+
+            /// <remarks/>
+            [System.Xml.Serialization.XmlAttributeAttribute()]
             public string Icon
             {
                 get
@@ -200,6 +220,20 @@
                 set
                 {
                     this.iconField = value;
+                }
+            }
+
+            /// <remarks/>
+            [System.Xml.Serialization.XmlAttributeAttribute()]
+            public string Label
+            {
+                get
+                {
+                    return this.labelField;
+                }
+                set
+                {
+                    this.labelField = value;
                 }
             }
 
@@ -216,6 +250,20 @@
                     this.processorArchitectureField = value;
                 }
             }
+
+            /// <remarks/>
+            [System.Xml.Serialization.XmlAttributeAttribute()]
+            public string UseManualLocation
+            {
+                get
+                {
+                    return this.useManualLocationField;
+                }
+                set
+                {
+                    this.useManualLocationField = value;
+                }
+            }
         }
 
         /// <remarks/>
@@ -229,11 +277,7 @@
 
             private string targetField;
 
-            private string labelField;
-
-            private string sourceNodeDetailsField;
-
-            private string targetNodeDetailsField;
+            private string boundsField;
 
             /// <remarks/>
             [System.Xml.Serialization.XmlAttributeAttribute()]
@@ -265,43 +309,15 @@
 
             /// <remarks/>
             [System.Xml.Serialization.XmlAttributeAttribute()]
-            public string Label
+            public string Bounds
             {
                 get
                 {
-                    return this.labelField;
+                    return this.boundsField;
                 }
                 set
                 {
-                    this.labelField = value;
-                }
-            }
-
-            /// <remarks/>
-            [System.Xml.Serialization.XmlAttributeAttribute()]
-            public string SourceNodeDetails
-            {
-                get
-                {
-                    return this.sourceNodeDetailsField;
-                }
-                set
-                {
-                    this.sourceNodeDetailsField = value;
-                }
-            }
-
-            /// <remarks/>
-            [System.Xml.Serialization.XmlAttributeAttribute()]
-            public string TargetNodeDetails
-            {
-                get
-                {
-                    return this.targetNodeDetailsField;
-                }
-                set
-                {
-                    this.targetNodeDetailsField = value;
+                    this.boundsField = value;
                 }
             }
         }
@@ -342,6 +358,78 @@
                 set
                 {
                     this.labelField = value;
+                }
+            }
+        }
+
+        /// <remarks/>
+        [System.SerializableAttribute()]
+        [System.ComponentModel.DesignerCategoryAttribute("code")]
+        [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://schemas.microsoft.com/vs/2009/dgml")]
+        public partial class DirectedGraphProperty
+        {
+
+            private string idField;
+
+            private string dataTypeField;
+
+            private string labelField;
+
+            private string descriptionField;
+
+            /// <remarks/>
+            [System.Xml.Serialization.XmlAttributeAttribute()]
+            public string Id
+            {
+                get
+                {
+                    return this.idField;
+                }
+                set
+                {
+                    this.idField = value;
+                }
+            }
+
+            /// <remarks/>
+            [System.Xml.Serialization.XmlAttributeAttribute()]
+            public string DataType
+            {
+                get
+                {
+                    return this.dataTypeField;
+                }
+                set
+                {
+                    this.dataTypeField = value;
+                }
+            }
+
+            /// <remarks/>
+            [System.Xml.Serialization.XmlAttributeAttribute()]
+            public string Label
+            {
+                get
+                {
+                    return this.labelField;
+                }
+                set
+                {
+                    this.labelField = value;
+                }
+            }
+
+            /// <remarks/>
+            [System.Xml.Serialization.XmlAttributeAttribute()]
+            public string Description
+            {
+                get
+                {
+                    return this.descriptionField;
+                }
+                set
+                {
+                    this.descriptionField = value;
                 }
             }
         }
@@ -481,61 +569,6 @@
             }
         }
 
-        /// <remarks/>
-        [System.SerializableAttribute()]
-        [System.ComponentModel.DesignerCategoryAttribute("code")]
-        [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://schemas.microsoft.com/vs/2009/dgml")]
-        public partial class DirectedGraphProperty
-        {
-
-            private string idField;
-
-            private string dataTypeField;
-
-            private string labelField;
-
-            /// <remarks/>
-            [System.Xml.Serialization.XmlAttributeAttribute()]
-            public string Id
-            {
-                get
-                {
-                    return this.idField;
-                }
-                set
-                {
-                    this.idField = value;
-                }
-            }
-
-            /// <remarks/>
-            [System.Xml.Serialization.XmlAttributeAttribute()]
-            public string DataType
-            {
-                get
-                {
-                    return this.dataTypeField;
-                }
-                set
-                {
-                    this.dataTypeField = value;
-                }
-            }
-
-            /// <remarks/>
-            [System.Xml.Serialization.XmlAttributeAttribute()]
-            public string Label
-            {
-                get
-                {
-                    return this.labelField;
-                }
-                set
-                {
-                    this.labelField = value;
-                }
-            }
-        }
 
     }
 }
