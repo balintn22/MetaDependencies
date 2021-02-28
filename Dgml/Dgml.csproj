@@ -41,8 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dgml.cs" />
-    <Compile Include="Dgml.Generated.cs" />
+    <Compile Include="GraphSplitter.cs" />
+    <Compile Include="DirectedGraphLink.cs" />
+    <Compile Include="DirectedGraphNode.cs" />
+    <Compile Include="Generated.cs" />
     <Compile Include="DgmlRepo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

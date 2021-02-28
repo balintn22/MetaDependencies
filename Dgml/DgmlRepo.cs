@@ -5,31 +5,31 @@ namespace Dgml
 {
     public interface IDgmlRepo
     {
-        Dgml.DirectedGraph Load(string dgmlFilePath);
+        DirectedGraph Load(string dgmlFilePath);
 
         /// <summary>Saves a graph as .dgml, overwriting the target file if it exists.</summary>
-        void Save(Dgml.DirectedGraph graph, string dgmlFilePath);
+        void Save(DirectedGraph graph, string dgmlFilePath);
     }
 
     public class DgmlRepo : IDgmlRepo
     {
-        public Dgml.DirectedGraph Load(string dgmlFilePath)
+        public DirectedGraph Load(string dgmlFilePath)
         {
             using (var fileStream = File.Open(dgmlFilePath, FileMode.Open))
             {
-                XmlSerializer serializer = new XmlSerializer(typeof(Dgml.DirectedGraph));
-                return (Dgml.DirectedGraph)serializer.Deserialize(fileStream);
+                XmlSerializer serializer = new XmlSerializer(typeof(DirectedGraph));
+                return (DirectedGraph)serializer.Deserialize(fileStream);
             }
         }
 
-        public void Save(Dgml.DirectedGraph graph, string dgmlFilePath)
+        public void Save(DirectedGraph graph, string dgmlFilePath)
         {
             if (File.Exists(dgmlFilePath))
                 File.Delete(dgmlFilePath);
 
             using (var fileStream = File.Open(dgmlFilePath, FileMode.CreateNew))
             {
-                XmlSerializer serializer = new XmlSerializer(typeof(Dgml.DirectedGraph));
+                XmlSerializer serializer = new XmlSerializer(typeof(DirectedGraph));
                 serializer.Serialize(fileStream, graph);
             }
         }

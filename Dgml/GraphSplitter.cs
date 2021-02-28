@@ -1,18 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace MergeGraphs.Logic
+namespace Dgml
 {
     /// <summary>
     /// Helps to split graphs to fully connected subgraphs.
     /// </summary>
-    public static class DiGraphSplitter
+    public static class GraphSplitter
     {
         /// <summary>Creates a copy of the graph, without nodes and links.</summary>
-        private static Dgml.DirectedGraph CopyEmpty(Dgml.DirectedGraph source)
+        private static DirectedGraph CopyEmpty(DirectedGraph source)
         {
-            return new Dgml.DirectedGraph
+            return new DirectedGraph
             {
                 Categories = source.Categories,
                 GraphDirection = source.GraphDirection,
@@ -24,7 +23,7 @@ namespace MergeGraphs.Logic
         }
 
         /// <summary>Creates a shallow copy of a graph.</summary>
-        private static Dgml.DirectedGraph Copy(Dgml.DirectedGraph source)
+        private static DirectedGraph Copy(DirectedGraph source)
         {
             var ret = CopyEmpty(source);
             ret.Nodes = source.Nodes.Select(node => node).ToArray();
@@ -32,9 +31,9 @@ namespace MergeGraphs.Logic
             return ret;
         }
 
-        public static IEnumerable<Dgml.DirectedGraph> SplitToConnectedSubGraphs(Dgml.DirectedGraph diGraph)
+        public static IEnumerable<DirectedGraph> SplitToConnectedSubGraphs(DirectedGraph diGraph)
         {
-            var ret = new List<Dgml.DirectedGraph>();
+            var ret = new List<DirectedGraph>();
             var remainder = Copy(diGraph);
 
             while (remainder.Nodes != null || remainder.Nodes.Length > 0)
@@ -52,15 +51,15 @@ namespace MergeGraphs.Logic
         /// <param name="source"></param>
         /// <param name="nodes"></param>
         /// <returns></returns>
-        private static Dgml.DirectedGraph ExtractConnected(Dgml.DirectedGraph source, Dgml.DirectedGraphNode startNode)
+        private static DirectedGraph ExtractConnected(DirectedGraph source, DirectedGraphNode startNode)
         {
-            Dgml.DirectedGraph connectedGraph = CopyEmpty(source);
-            connectedGraph.Nodes = new Dgml.DirectedGraphNode[] { startNode };
+            DirectedGraph connectedGraph = CopyEmpty(source);
+            connectedGraph.Nodes = new DirectedGraphNode[] { startNode };
             source.Nodes = source.Nodes.Except(connectedGraph.Nodes).ToArray();
 
             while(true)
             {
-                (List<string> firstNeighborNodeIds, List<Dgml.DirectedGraphLink> connectedLinks) = FindFirstNeighbors(source, connectedGraph.Nodes);
+                (List<string> firstNeighborNodeIds, List<DirectedGraphLink> connectedLinks) = FindFirstNeighbors(source, connectedGraph.Nodes);
                 if (!firstNeighborNodeIds.Any() && !connectedLinks.Any())
                     break;
 
@@ -79,13 +78,13 @@ namespace MergeGraphs.Logic
 
         /// <summary>Finds nodes and links that are first neighbors to the ones in fromNodes.</summary>
         /// <returns>Tuple with 1st neighbor node ids and their connecting links.</returns>
-        private static (List<string> firstNeighborNodeIds, List<Dgml.DirectedGraphLink> connectedLinks) FindFirstNeighbors(
-            Dgml.DirectedGraph source, IEnumerable<Dgml.DirectedGraphNode> fromNodes)
+        private static (List<string> firstNeighborNodeIds, List<DirectedGraphLink> connectedLinks) FindFirstNeighbors(
+            DirectedGraph source, IEnumerable<DirectedGraphNode> fromNodes)
         {
             var connectedNodeIds = new List<string>();
-            var connectedLinks = new List<Dgml.DirectedGraphLink>();
+            var connectedLinks = new List<DirectedGraphLink>();
 
-            foreach (Dgml.DirectedGraphLink link in source.Links)
+            foreach (DirectedGraphLink link in source.Links)
             {
                 if (fromNodes.Any(fromNode => fromNode.Id == link.Source) || fromNodes.Any(fromNode => fromNode.Id == link.Target))
                 {   // This link connects to fromNodes.
