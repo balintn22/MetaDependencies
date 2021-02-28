@@ -15,19 +15,9 @@ namespace MergeGraphs.Logic.Test.SpringLayouting.Physics
         public void CalculateForces_NoExtension_ShouldProduceZeroForce()
         {
             var rnd = new Random();
-
-            // Test with any random spring length
             var springLength = rnd.NextDouble();
             var springStiffness = rnd.NextDouble();
-
-            // Point A can be anywhere
-            var pA = new Position(rnd.Next(), rnd.Next());
-
-            // Point B can be in any direction from A.
-            // The important thing is that it is springLength away
-            var vAB = Vector.FromPolar(springLength, rnd.NextDouble());
-
-            Position pB = pA + vAB;
+            (Position pA, Position pB, _) = PhysicsTestHelper.GetRandomPoints(springLength);
 
             Spring sut = new Spring(springLength, springStiffness, Spring.Characteristics.Linear);
 
@@ -46,18 +36,9 @@ namespace MergeGraphs.Logic.Test.SpringLayouting.Physics
             double stiffness, double extension, double expectedForceMagnitude)
         {
             var rnd = new Random();
-
-            // Test with any random spring length
             var springLength = rnd.NextDouble();
-
-            // Point A can be anywhere
-            var pA = new Position(rnd.Next(), rnd.Next());
-
-            // Point B can be in any direction from A.
-            // The important thing is that it is N away
-            var vAB = Vector.FromPolar(springLength + extension, rnd.NextDouble());
-
-            Position pB = pA + vAB;
+            (Position pA, Position pB, Vector vAB) =
+                PhysicsTestHelper.GetRandomPoints(springLength + extension);
 
             Spring sut = new Spring(springLength, stiffness, Spring.Characteristics.Linear);
 

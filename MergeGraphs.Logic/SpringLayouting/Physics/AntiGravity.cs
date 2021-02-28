@@ -4,11 +4,24 @@ namespace MergeGraphs.Logic.SpringLayouting.Physics
 {
     public class AntiGravity
     {
-        private double _strength;
+        public double AntigravitationalConstant { get; }
 
-        public AntiGravity(double strength)
+        /// <param name="constant">
+        /// Specifies the strength of the anti-gravitational force.
+        /// It specifies the magnitude of force exerted by anti-gravity on
+        /// two objects each with a mass of 1, being a distance of 1 apart.
+        /// The antigravitational force can be calculated like this:
+        ///     Fa = A * ma * mb / d^2
+        ///  where
+        ///     Fa is the magnitude of the anti-gravitaional force exerted on object A
+        ///     A is the anti-gravtiational constant
+        ///     ma and mb are the masses of object A and B respectively
+        ///     d is the distance between objects A nd B
+        ///  The direction of Fa is that of the vector BA.
+        /// </param>
+        public AntiGravity(double constant)
         {
-            _strength = strength;
+            AntigravitationalConstant = constant;
         }
 
         /// <summary>
@@ -26,14 +39,14 @@ namespace MergeGraphs.Logic.SpringLayouting.Physics
             Position positionA,
             Position positionB)
         {
-            Vector aToBVector = (Vector)positionA - (Vector)positionB;
+            Vector aToBVector = (Vector)positionB - (Vector)positionA;
 
             double distance = aToBVector.Length;
 
-            double forceMagnitude = massA * massB * _strength / distance / distance;
+            double forceMagnitude = massA * massB * AntigravitationalConstant / distance / distance;
 
-            Force forceA = Force.ForceUsingRad(forceMagnitude, aToBVector.FiRad);
-            Force forceB = Force.ForceUsingRad(forceMagnitude, aToBVector.Reverse().FiRad);
+            Force forceA = Force.ForceUsingRad(forceMagnitude, aToBVector.Reverse().FiRad);
+            Force forceB = Force.ForceUsingRad(forceMagnitude, aToBVector.FiRad);
             return (forceA, forceB);
         }
     }
