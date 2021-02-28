@@ -6,6 +6,10 @@ namespace MergeGraphs.Logic.SpringLayouting.Geometry
     /// <summary>
     /// Implements a vector that can be set and get in either rectangular or polar coordinates,
     /// where the conversion is delayed until needed.
+    /// Positive X axis is to the right.
+    /// Positive Y axis is to the top.
+    /// FiRad is in the range [0, 2*Pi).
+    /// FiDeg is in the range [0, 360)
     /// </summary>
     public class Vector
     {
@@ -14,6 +18,7 @@ namespace MergeGraphs.Logic.SpringLayouting.Geometry
         private double? _length;
         private double? _fiRad;
 
+        /// <summary>Positive X axis is to the right.</summary>
         public double X
         {
             get
@@ -32,6 +37,7 @@ namespace MergeGraphs.Logic.SpringLayouting.Geometry
             }
         }
 
+        /// <summary>Positive Y axis is to the top.</summary>
         public double Y
         {
             get
@@ -70,6 +76,7 @@ namespace MergeGraphs.Logic.SpringLayouting.Geometry
 
         /// <summary>
         /// Angle of the vector to the positive X axis, expressed in radians.
+        /// Range is [0, 2*Pi).
         /// </summary>
         public double FiRad
         {
@@ -91,6 +98,7 @@ namespace MergeGraphs.Logic.SpringLayouting.Geometry
 
         /// <summary>
         /// Angle of the vector to the positive X axis, expressed in degrees.
+        /// Range is [0, 360).
         /// </summary>
         public double FiDeg
         {
@@ -114,7 +122,15 @@ namespace MergeGraphs.Logic.SpringLayouting.Geometry
         /// <summary>Creates a vector from its polar coordinates.</summary>
         public static Vector FromPolar(double length, double fiRad)
         {
-            return new Vector { _x = null, _y = null, _length = length, _fiRad = fiRad % (2 * Math.PI) };
+            if (fiRad >= 2 * Math.PI)
+                fiRad = fiRad % (2 * Math.PI);
+            else if (fiRad < 0.0)
+                fiRad = fiRad + (1 + (int)(fiRad / 2 / Math.PI)) * 2 * Math.PI;
+
+            var v = new Vector { _x = null, _y = null, _length = length, _fiRad = fiRad };
+            if (v.Length < 0)
+                return v.Reverse();
+            return v;
         }
 
         private void CalculateXY()
@@ -123,9 +139,9 @@ namespace MergeGraphs.Logic.SpringLayouting.Geometry
                 throw new Exception("To calculate the X and Y coordinates of a vector, its direction and length must be known.");
 
             double length = (double)_length;
-            double direction = (double)_fiRad;
-            _x = length * Math.Cos((double)direction);
-            _y = length * Math.Sin((double)direction);
+            double fiRad = (double)_fiRad;
+            _x = length * Math.Cos((double)fiRad);
+            _y = length * Math.Sin((double)fiRad);
         }
 
         private void ResetXY()
@@ -142,7 +158,9 @@ namespace MergeGraphs.Logic.SpringLayouting.Geometry
             double x = (double)_x;
             double y = (double)_y;
             _length = Math.Sqrt(x * x + y * y);
-            _fiRad = Math.Atan2(x, y);
+            _fiRad = Math.Atan2(y, x);
+            if(_fiRad < 0.0)
+                _fiRad = _fiRad + 2 * Math.PI;
         }
 
         private void ResetPolar()
@@ -157,7 +175,7 @@ namespace MergeGraphs.Logic.SpringLayouting.Geometry
         public static Vector operator -(Vector v1, Vector v2) =>
             FromXY(v1.X - v2.X, v1.Y - v2.Y);
 
-        public Vector Reverse() => FromPolar(Length, FiRad + Math.PI);
+        public Vector Reverse() => FromPolar(-Length, FiRad + Math.PI);
 
         public static Vector Sum(IEnumerable<Vector> vectors)
         {
