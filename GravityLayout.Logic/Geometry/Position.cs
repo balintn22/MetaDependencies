@@ -1,4 +1,4 @@
-﻿namespace MergeGraphs.Logic.SpringLayouting.Geometry
+﻿namespace GravityLayout.Logic.Geometry
 {
     /// <summary>
     /// Represents the position of an object.

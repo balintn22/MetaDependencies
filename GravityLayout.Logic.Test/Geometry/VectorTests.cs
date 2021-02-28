@@ -1,10 +1,10 @@
 ﻿using FluentAssertions;
-using MergeGraphs.Logic.SpringLayouting.Geometry;
+using GravityLayout.Logic.Geometry;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 
-namespace MergeGraphs.Logic.Test.SpringLayouting.Geometry
+namespace GravityLayout.Logic.Test.Geometry
 {
     [TestClass]
     public class VectorTests

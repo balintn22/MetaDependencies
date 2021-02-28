@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Xml.Serialization;
 
-namespace MergeGraphs.Logic
+namespace Dgml
 {
     public interface IDgmlRepo
     {

@@ -1,10 +1,10 @@
 ﻿using FluentAssertions;
-using MergeGraphs.Logic.SpringLayouting.Geometry;
-using MergeGraphs.Logic.SpringLayouting.Physics;
+using GravityLayout.Logic.Geometry;
+using GravityLayout.Logic.Physics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace MergeGraphs.Logic.Test.SpringLayouting.Physics
+namespace GravityLayout.Logic.Test.Physics
 {
     [TestClass]
     public class SpringTests

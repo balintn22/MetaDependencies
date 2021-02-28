@@ -1,6 +1,6 @@
-﻿using MergeGraphs.Logic.SpringLayouting.Geometry;
+﻿using GravityLayout.Logic.Geometry;
 
-namespace MergeGraphs.Logic.SpringLayouting.Physics
+namespace GravityLayout.Logic.Physics
 {
     public class AntiGravity
     {
@@ -43,7 +43,9 @@ namespace MergeGraphs.Logic.SpringLayouting.Physics
 
             double distance = aToBVector.Length;
 
-            double forceMagnitude = massA * massB * AntigravitationalConstant / distance / distance;
+            double forceMagnitude = distance == 0.0
+                ? double.PositiveInfinity
+                : massA * massB * AntigravitationalConstant / distance / distance;
 
             Force forceA = Force.ForceUsingRad(forceMagnitude, aToBVector.Reverse().FiRad);
             Force forceB = Force.ForceUsingRad(forceMagnitude, aToBVector.FiRad);

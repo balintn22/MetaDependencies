@@ -1,7 +1,7 @@
-﻿using MergeGraphs.Logic.SpringLayouting.Geometry;
+﻿using GravityLayout.Logic.Geometry;
 using System;
 
-namespace MergeGraphs.Logic.Test.SpringLayouting.Physics
+namespace GravityLayout.Logic.Test.Physics
 {
     public static class PhysicsTestHelper
     {

@@ -1,6 +1,6 @@
-﻿using MergeGraphs.Logic.SpringLayouting.Geometry;
+﻿using GravityLayout.Logic.Geometry;
 
-namespace MergeGraphs.Logic.SpringLayouting.Physics
+namespace GravityLayout.Logic.Physics
 {
     /// <summary>
     /// Represents a spring, that exerts a force between its endpoints,

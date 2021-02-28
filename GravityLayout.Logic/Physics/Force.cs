@@ -1,9 +1,9 @@
-﻿using MergeGraphs.Logic.SpringLayouting.Geometry;
+﻿using GravityLayout.Logic.Geometry;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace MergeGraphs.Logic.SpringLayouting.Physics
+namespace GravityLayout.Logic.Physics
 {
     /// <summary>
     /// Represents a force acting on an object.

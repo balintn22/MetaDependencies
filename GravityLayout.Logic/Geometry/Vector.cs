@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace MergeGraphs.Logic.SpringLayouting.Geometry
+namespace GravityLayout.Logic.Geometry
 {
     /// <summary>
     /// Implements a vector that can be set and get in either rectangular or polar coordinates,
@@ -175,7 +175,7 @@ namespace MergeGraphs.Logic.SpringLayouting.Geometry
         public static Vector operator -(Vector v1, Vector v2) =>
             FromXY(v1.X - v2.X, v1.Y - v2.Y);
 
-        public Vector Reverse() => FromPolar(-Length, FiRad + Math.PI);
+        public Vector Reverse() => FromPolar(Length, FiRad + Math.PI);
 
         public static Vector Sum(IEnumerable<Vector> vectors)
         {

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F1B637D7-678D-4674-9D85-90127E2AAB25}</ProjectGuid>
+    <ProjectGuid>{AA051BEC-AA74-4CF1-AAAD-D8A566BB5C37}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>MergeGraphs</RootNamespace>
-    <AssemblyName>MergeGraphs</AssemblyName>
+    <RootNamespace>GravityLayout</RootNamespace>
+    <AssemblyName>GravityLayout</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -54,9 +54,9 @@
       <Project>{e86636dc-64f3-4173-8d1b-bf7b55ceab70}</Project>
       <Name>Dgml</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MergeGraphs.Logic\MergeGraphs.Logic.csproj">
-      <Project>{c42ed430-ae8f-41ac-8506-2178e4875256}</Project>
-      <Name>MergeGraphs.Logic</Name>
+    <ProjectReference Include="..\GravityLayout.Logic\GravityLayout.Logic.csproj">
+      <Project>{263aa49a-568e-47e1-822b-51b602b92949}</Project>
+      <Name>GravityLayout.Logic</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

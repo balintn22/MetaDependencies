@@ -1,4 +1,5 @@
-﻿using MergeGraphs.Logic;
+﻿using Dgml;
+using MergeGraphs.Logic;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -30,9 +31,10 @@ namespace MergeGraphs
             ProcessArgs(args);
             string[] dgmlsFilePaths = Directory.GetFiles(_inputFolderPath, "*.dgml");
             List<Dgml.DirectedGraph> graphs = dgmlsFilePaths.Select(f => _dgmlRepo.Load(f)).ToList();
-            Dgml.DirectedGraph merged = _merger.Merge(graphs);
-            Dgml.DirectedGraph withoutIndirectReferences = DiGraphHelper.RemoveShortcuts(merged);
-            _dgmlRepo.Save(withoutIndirectReferences, "Merged.dgml");
+            Dgml.DirectedGraph result = _merger.Merge(graphs);
+            if(!_keepIndirectReferences)
+                result = DiGraphHelper.RemoveShortcuts(result);
+            _dgmlRepo.Save(result, "Merged.dgml");
         }
 
         private static void ShowUsage()
@@ -48,7 +50,7 @@ namespace MergeGraphs
                 $" where\n" +
                 $"  -indir         specifies the folder, containing the source .dgml files. *.dgml will be merged.\n" +
                 $"  -keepindirects If not specifeid, removes indirect assembly references, thus simplifying the graph.\n" +
-                $"                 If specified, indirect refences are kept."
+                $"                 If specified, indirect references are kept."
             );
         }
 

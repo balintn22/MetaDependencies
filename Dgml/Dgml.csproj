@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F1B637D7-678D-4674-9D85-90127E2AAB25}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>MergeGraphs</RootNamespace>
-    <AssemblyName>MergeGraphs</AssemblyName>
+    <ProjectGuid>{E86636DC-64F3-4173-8D1B-BF7B55CEAB70}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Dgml</RootNamespace>
+    <AssemblyName>Dgml</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,21 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Dgml.cs" />
+    <Compile Include="Dgml.Generated.cs" />
+    <Compile Include="DgmlRepo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Dgml\Dgml.csproj">
-      <Project>{e86636dc-64f3-4173-8d1b-bf7b55ceab70}</Project>
-      <Name>Dgml</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MergeGraphs.Logic\MergeGraphs.Logic.csproj">
-      <Project>{c42ed430-ae8f-41ac-8506-2178e4875256}</Project>
-      <Name>MergeGraphs.Logic</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
