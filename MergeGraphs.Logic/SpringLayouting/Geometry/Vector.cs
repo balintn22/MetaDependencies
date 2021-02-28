@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace MergeGraphs.Logic.SpringLayouting.Geometry
 {
@@ -93,8 +94,8 @@ namespace MergeGraphs.Logic.SpringLayouting.Geometry
         /// </summary>
         public double FiDeg
         {
-            get { return FiRad / Math.PI * 360.0; }
-            set { FiRad = value * Math.PI / 360.0; }
+            get { return FiRad / Math.PI * 180.0; }
+            set { FiRad = value * Math.PI / 180.0; }
         }
 
         /// <summary>
@@ -123,8 +124,8 @@ namespace MergeGraphs.Logic.SpringLayouting.Geometry
 
             double length = (double)_length;
             double direction = (double)_fiRad;
-            X = length * Math.Cos((double)direction);
-            Y = length * Math.Sin((double)direction);
+            _x = length * Math.Cos((double)direction);
+            _y = length * Math.Sin((double)direction);
         }
 
         private void ResetXY()
@@ -140,8 +141,8 @@ namespace MergeGraphs.Logic.SpringLayouting.Geometry
 
             double x = (double)_x;
             double y = (double)_y;
-            Length = Math.Sqrt(x * x + y * y);
-            FiRad = Math.Atan2(x, y);
+            _length = Math.Sqrt(x * x + y * y);
+            _fiRad = Math.Atan2(x, y);
         }
 
         private void ResetPolar()
@@ -151,11 +152,27 @@ namespace MergeGraphs.Logic.SpringLayouting.Geometry
         }
 
         public static Vector operator +(Vector v1, Vector v2) =>
-            Vector.FromXY(v1.X + v2.X, v1.Y + v2.Y);
+            FromXY(v1.X + v2.X, v1.Y + v2.Y);
 
         public static Vector operator -(Vector v1, Vector v2) =>
-            Vector.FromXY(v2.X - v1.X, v2.Y - v1.Y);
+            FromXY(v1.X - v2.X, v1.Y - v2.Y);
 
-        public Vector Reverse() => Vector.FromPolar(Length, FiRad + Math.PI);
+        public Vector Reverse() => FromPolar(Length, FiRad + Math.PI);
+
+        public static Vector Sum(IEnumerable<Vector> vectors)
+        {
+            if (vectors is null)
+                throw new ArgumentNullException(nameof(vectors));
+
+            double sumX = 0;
+            double sumY = 0;
+            foreach (Vector vector in vectors)
+            {
+                sumX += vector.X;
+                sumY += vector.Y;
+            }
+
+            return FromXY(sumX, sumY);
+        }
     }
 }
