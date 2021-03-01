@@ -23,10 +23,15 @@ namespace Dgml
             HashSet<DirectedGraphLink> floodedLinks)
         {
             var newConnectedLinks = graph.Links
-                .Where(link => floodedNodes.Any(floodedNode => AreConnected(floodedNode, link)));
+                .Where(link => floodedNodes.Any(floodedNode => AreConnected(floodedNode, link))
+                    && !floodedLinks.Contains(link))
+                .ToList();
 
             var newConnectedNodes = graph.Nodes
-                .Where(node => newConnectedLinks.Any(newConnectedLink => AreConnected(node, newConnectedLink)));
+                .Where(node => newConnectedLinks.Any(newConnectedLink => AreConnected(node, newConnectedLink))
+                    && !floodedNodes.Contains(node))
+                .Distinct()
+                .ToList();
 
             bool anyChanges = newConnectedLinks.Any() || newConnectedNodes.Any();
             if (!anyChanges)
@@ -81,7 +86,7 @@ namespace Dgml
             }
             else
             {
-                while (remainder.Nodes != null || remainder.Nodes.Length > 0)
+                while (remainder.Nodes != null && remainder.Nodes.Length > 0)
                 {
                     DirectedGraphNode anyRemainingNode = remainder.Nodes.First();
                     var connectedNodes = new HashSet<DirectedGraphNode> { anyRemainingNode };

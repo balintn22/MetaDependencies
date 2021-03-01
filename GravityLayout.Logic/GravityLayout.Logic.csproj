@@ -48,6 +48,7 @@
     <Compile Include="GravityLayouter.cs" />
     <Compile Include="Physics\AntiGravity.cs" />
     <Compile Include="Physics\Force.cs" />
+    <Compile Include="Physics\Rope.cs" />
     <Compile Include="Physics\Spring.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

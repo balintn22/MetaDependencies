@@ -58,9 +58,9 @@ namespace GravityLayout.Logic.Physics
             double dl = currentLength - EquillibriumLength;
 
             double springForceMagnitude =
-                Characteristic == Characteristics.Linear ? Stiffness * dl :
-                Characteristic == Characteristics.Quadratic ? Stiffness * dl * dl :
-                /* Characteristic == Characteristics.Cubic */ Stiffness * dl * dl * dl;
+                Characteristic == Characteristics.Linear ? Stiffness * dl
+                : Characteristic == Characteristics.Quadratic ? Stiffness * dl * dl
+                : /* Characteristic == Characteristics.Cubic */ Stiffness * dl * dl * dl;
 
             Force forceA = Force.ForceUsingRad(springForceMagnitude, aToBVector.FiRad);
             Force forceB = Force.ForceUsingRad(springForceMagnitude, aToBVector.Reverse().FiRad);

@@ -58,13 +58,25 @@
     <Compile Include="Geometry\VectorTests.cs" />
     <Compile Include="Physics\AntiGravityTests.cs" />
     <Compile Include="Physics\PhysicsTestHelper.cs" />
+    <Compile Include="Physics\RopeTests.cs" />
     <Compile Include="Physics\SpringTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="GravityLayouterTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="DgmlWithBounds.dgml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DgmlWithoutBounds.dgml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Dgml\Dgml.csproj">
+      <Project>{e86636dc-64f3-4173-8d1b-bf7b55ceab70}</Project>
+      <Name>Dgml</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GravityLayout.Logic\GravityLayout.Logic.csproj">
       <Project>{263aa49a-568e-47e1-822b-51b602b92949}</Project>
       <Name>GravityLayout.Logic</Name>

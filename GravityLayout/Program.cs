@@ -41,7 +41,7 @@ namespace GravityLayout
             }
 
             Dgml.DirectedGraph graph = _dgmlRepo.Load(_inputPath);
-            var layouter = new GravityLayouter();
+            var layouter = new GravityLayouter(100, 1, Rope.Characteristics.Linear, 1);
             Dgml.DirectedGraph result = layouter.Layout(graph);
             _dgmlRepo.Save(result, _outputPath);
         }
@@ -53,7 +53,7 @@ namespace GravityLayout
             Console.WriteLine(
 $"{appName} Having a DGML graph, arranges its nodes using the anti-gravity " +
 $"method, where nodes have mass, proportional to their size(bounds)," +
-$"that repels them from one another.Links are considered springs," +
+$"that repels them from one another.Links are considered ropes," +
 $"pulling nodes together.\n" +
 $"If the graph has already been laid out starts from those node positions. If not, " +
 $"starts from a random layout." +

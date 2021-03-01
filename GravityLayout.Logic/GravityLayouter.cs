@@ -12,12 +12,29 @@ namespace GravityLayout.Logic
     /// Implements an algorithm that changes a graph's layout such, that
     /// edges do not cross each other as much as possible.
     /// Algorithm:
-    ///     - edges are springs, that attract nodes. Attraction force is proportional to lentgh.
+    ///     - edges are ropes, that attract nodes. Attraction force is proportional to length.
     ///     - anti-gravity repels nodes. This force is proportional to 1/distance^2
     ///     - not implemented: node boundaries should repel each other with a huge force, to avoid putting nodes on top of each other
     /// </summary>
     public class GravityLayouter
     {
+        private double _ropeLength;
+        private double _ropeStrength;
+        private Rope.Characteristics _ropeCharacteristics;
+        private double _antiGravitationalConstant;
+
+        public GravityLayouter(
+            double ropeLength,
+            double ropeStrength,
+            Rope.Characteristics ropeCharacteristics,
+            double antiGravitationalConstant)
+        {
+            _ropeLength = ropeLength;
+            _ropeStrength = ropeStrength;
+            _ropeCharacteristics = ropeCharacteristics;
+            _antiGravitationalConstant = antiGravitationalConstant;
+        }
+
         /// <summary>
         /// Lays out the graph blowing nodes apart so that edges cross as little as possible.
         /// Graph may not be fully connected. Connected sub-graphs are layed out individually and placed
@@ -31,9 +48,8 @@ namespace GravityLayout.Logic
             var connectedSubGraphs = GraphManipulator.SplitToConnectedSubGraphs(graph).ToList();
 
             // Layout individual fully connected graphs
-            var layoutedSubGraphs = new List<DirectedGraph>();
             foreach (var subGraph in connectedSubGraphs)
-                layoutedSubGraphs.Add(LayoutFullyConnected(subGraph));
+                LayoutFullyConnected(subGraph, 1, 100);
 
             // Place them one under another
             Stack(connectedSubGraphs.ToList());
@@ -98,81 +114,99 @@ namespace GravityLayout.Logic
 
         /// <summary>
         /// Lays out a graph assuming it is fully connected.
+        /// Mutates the original.
         /// </summary>
-        /// <param name="diGraph"></param>
+        /// <param name="graph"></param>
+        /// <param name="stopShiftThreshold">If node shifts are all below this threshold, the iteration stops.</param>
+        /// <param name="maxIterationCount">The maximum iteration count, after which layouting stops even if there are big node shifts.</param>
         /// <returns></returns>
-        private DirectedGraph LayoutFullyConnected(DirectedGraph diGraph)
+        private void LayoutFullyConnected(
+            DirectedGraph graph,
+            double stopShiftThreshold,
+            int maxIterationCount)
         {
-            // TODO: Use AntiGravityLayouting to arrange the graph.
+            bool anyBigShifts = true;
+            double maxShift;  // TODO: This can be removed. It is only there to visualize the amount of wobble
+            for (int i = 0; i < maxIterationCount && anyBigShifts; i++)
+            {
+                anyBigShifts = false;
+                maxShift = 0;
 
-            throw new NotImplementedException();
+                var nodeForces = CalculateNodeForces(graph);
+                foreach (var node in graph.Nodes)
+                {
+                    if (nodeForces.ContainsKey(node))
+                    {
+                        Force nodeForce = nodeForces[node];
+                        Shift nodeShift = (Shift)(Vector)nodeForce;  // TODO: Any multipliers to represent running longer then a second?
+                        ShiftNode(node, nodeShift);
+
+                        if (!anyBigShifts && ((Vector)nodeShift).Length > stopShiftThreshold)
+                            anyBigShifts = true;
+
+                        maxShift = Math.Max(maxShift, ((Vector)nodeShift).Length);
+                    }
+                }
+            }
         }
 
         /// <summary>
         /// Calculates the resultant forces at each node.
         /// </summary>
-        /// <param name="edgeSpringLength">
-        /// Specifies the length of edge-springs, where spring force is 0.
-        /// When edge-springs are compressed or elongated, they generate a force proportional to
-        /// their change in length and opposite in direction.
-        /// </param>
-        /// <param name="antiGravitationalConstant"></param>
         /// <returns>Dictionary of resultant forces by node id.</returns>
         private Dictionary<DirectedGraphNode, Force> CalculateNodeForces(
-            DirectedGraph graph,
-            double edgeSpringLength,
-            double edgeSpringStiffness,
-            Spring.Characteristics edgeSprintCharacteristics,
-            double antiGravitationalConstant)
+            DirectedGraph graph)
         {
             var ret = new Dictionary<DirectedGraphNode, Force>();
 
             if (graph.Nodes is null)
                 return ret;
 
-            var nodeForces = CalculateSpringForces(graph, edgeSpringLength, edgeSpringStiffness, edgeSprintCharacteristics);
-            foreach (var nodeForce in CalculateAntiGravitationalForces(graph, antiGravitationalConstant))
+            IEnumerable<(DirectedGraphNode, Force)> ropeForces = RopeForces(graph);
+            IEnumerable<(DirectedGraphNode, Force)> agForces = AntiGravitationalForces(graph);
+            var sumRopeForces = Force.Sum(ropeForces.Select(x => x.Item2)).Magnitude;
+            var sumAgForces = Force.Sum(agForces.Select(x => x.Item2)).Magnitude;
+            foreach (var nodeForce in ropeForces.Union(agForces))
             {
-                if (!ret.ContainsKey(nodeForce.Key))
-                    ret.Add(nodeForce.Key, nodeForce.Value);
+                var node = nodeForce.Item1;
+                var force = nodeForce.Item2;
+                if (!ret.ContainsKey(node))
+                    ret.Add(node, force);
                 else
-                    ret[nodeForce.Key] += nodeForce.Value;
+                    ret[node] += force;
             }
 
-            return nodeForces;
+            return ret;
         }
 
-        private Dictionary<DirectedGraphNode, Force> CalculateAntiGravitationalForces(
-            DirectedGraph graph,
-            double antiGravitationalConstant)
+        private IEnumerable<(DirectedGraphNode, Force)> AntiGravitationalForces(DirectedGraph graph)
         {
             var ret = new Dictionary<DirectedGraphNode, Force>();
-            AntiGravity antiGravity = new AntiGravity(antiGravitationalConstant);
+            AntiGravity antiGravity = new AntiGravity(_antiGravitationalConstant);
 
             // Consider each node-pair exactly once
             for (int a = 0; a < graph.Nodes.Length - 1; a++)
             {
                 DirectedGraphNode nodeA = graph.Nodes[a];
                 double massA = GetMass(nodeA);
+                Position pA = GetCenter(nodeA.GetBoundingRect());
 
                 for (int b = a + 1; b < graph.Nodes.Length; b++)
                 {
                     DirectedGraphNode nodeB = graph.Nodes[b];
                     double massB = GetMass(nodeB);
+                    Position pB = GetCenter(nodeB.GetBoundingRect());
+                    (Force fA, Force fB) = antiGravity.CalculateForces(massA, massB, pA, pB);
+                    yield return (nodeA, fA);
+                    yield return (nodeB, fB);
                 }
             }
-
-            return ret;
         }
 
-        private Dictionary<DirectedGraphNode, Force> CalculateSpringForces(
-            DirectedGraph graph,
-            double edgeSpringLength,
-            double edgeSpringStiffness,
-            Spring.Characteristics edgeSprintCharacteristics)
+        private IEnumerable<(DirectedGraphNode, Force)> RopeForces(DirectedGraph graph)
         {
             var ret = new Dictionary<DirectedGraphNode, Force>();
-            Spring spring = new Spring(edgeSpringLength, edgeSpringStiffness, edgeSprintCharacteristics);
+            var rope = new Rope(_ropeLength, _ropeStrength, _ropeCharacteristics);
 
             foreach (var link in graph.Links)
             {
@@ -182,20 +216,10 @@ namespace GravityLayout.Logic
                 RectangleF? boundsB = nodeB.GetBoundingRect();
                 Position pA = GetCenter(boundsA);
                 Position pB = GetCenter(boundsB);
-                (Force fA, Force fB) = spring.CalculateForces(pA, pB);
-
-                if (!ret.ContainsKey(nodeA))
-                    ret.Add(nodeA, fA);
-                else
-                    ret[nodeA] += fA;
-
-                if (!ret.ContainsKey(nodeB))
-                    ret.Add(nodeB, fB);
-                else
-                    ret[nodeB] += fB;
+                (Force fA, Force fB) = rope.CalculateForces(pA, pB);
+                yield return (nodeA, fA);
+                yield return (nodeB, fB);
             }
-
-            return ret;
         }
 
         private Position GetCenter(RectangleF? rect)
@@ -205,6 +229,15 @@ namespace GravityLayout.Logic
 
             RectangleF r = (RectangleF)rect;
             return new Position((r.Top + r.Bottom) / 2.0, (r.Left + r.Right) / 2.0);
+        }
+
+        /// <summary>Mutates a node by shifting its bounding rect.</summary>
+        private void ShiftNode(DirectedGraphNode node, Shift shift)
+        {
+            RectangleF nodeBounds = node.GetBoundingRect() ?? new RectangleF(0, 0, 0, 0);
+            nodeBounds.X += (float)shift.DX;
+            nodeBounds.Y += (float)shift.DY;
+            node.SetBoundingRect(nodeBounds);
         }
 
         private double GetMass(DirectedGraphNode node) =>

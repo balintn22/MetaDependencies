@@ -1,0 +1,541 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph GraphDirection="BottomToTop" xsd="http://www.w3.org/2001/XMLSchema" xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+    <Node Id="fluentvalidation" Category="Normal" Bounds="5063.50992723115,391.7199104502,125.15,25.96" Icon="CodeSchema_Assembly" Label="FluentValidation" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.cryptographyservices" Category="Normal" Bounds="2070.86077799479,195.117163170138,218.456666666666,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.CryptographyServices" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.cryptographyservices.client" Category="Normal" Bounds="1846.17752601624,251.077266235352,251.433333333333,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.CryptographyServices.Client" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.cryptographyservices.entityframework" Category="Normal" Bounds="1194.24122233073,166.879417499222,309.356666666667,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.CryptographyServices.EntityFramework" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.cryptographyservices.host" Category="EntryPoint" Bounds="2133.12838541667,24.1476358978272,245.766666666667,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.CryptographyServices.Host" ProcessorArchitecture="MSIL" UseManualLocation="True" />
+    <Node Id="goodfellow.cryptographyservices.infrastructure" Category="Normal" Bounds="1744.25051269531,333.412528707886,292.05,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.CryptographyServices.Infrastructure" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.data" Category="VersionsConflicted" Bounds="5346.34500321786,447.679932851134,128.203333333333,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.Data" />
+    <Node Id="goodfellow.data.classification" Category="VersionsConflicted" Bounds="4360.023299272,503.639929760046,199.446666666667,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.Data.Classification" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.data.stores" Category="Normal" Bounds="4687.89643273357,373.180545397944,163.43,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.Data.Stores" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.data.stores.entityframework" Category="Normal" Bounds="3418.8815,209.70884901287,254.33,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.Data.Stores.EntityFramework" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.datacollection" Category="Normal" Bounds="4847.62543333333,255.792147050845,181.09,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.DataCollection" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.dukptaes" Category="UnusedAssembly" Bounds="3711.20384276986,335.760099091187,154.906666666667,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.DukptAes" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.esl" Category="Normal" Bounds="3111.93384276986,335.760182242584,117.58,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.Esl" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.esl.libesl" Category="UnusedAssembly" Bounds="2127.61085934957,251.077266235352,149.86,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.Esl.LibEsl" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.esl.managed" Category="UnusedAssembly" Bounds="1767.72131103516,139.157063170138,170.37,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.Esl.Managed" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.events" Category="Normal" Bounds="4680.072,306.040344702593,137.553333333333,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.Events" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.events.publisher.azure" Category="Normal" Bounds="3014.6113,223.839959282684,221.87,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.Events.Publisher.Azure" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.hsmservices.client" Category="Normal" Bounds="1227.83085934957,278.79961730957,202.826666666667,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.HsmServices.Client" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.hsmservices.infrastructure" Category="Normal" Bounds="-0.333233303493941,335.759883422852,243.443333333333,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.HsmServices.Infrastructure" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.installationservices" Category="Normal" Bounds="5737.95573333334,167.879924058095,203.863333333334,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.InstallationServices" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.installationservices.infrastructure" Category="Normal" Bounds="6359.08603333333,314.419336701489,277.456666666667,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.InstallationServices.Infrastructure" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.installationservices.policy" Category="Normal" Bounds="6097.02593333333,258.459351267185,236.933333333333,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.InstallationServices.Policy" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.installationservices.webapi" Category="Normal" Bounds="5216.33553333333,167.880005683358,248.233333333334,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.InstallationServices.WebApi" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.integrationservices" Category="Normal" Bounds="6363.95936666667,250.08024669978,204.366666666667,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.IntegrationServices" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.integrationservices.host" Category="EntryPoint" Bounds="4981.36383225101,55.9600443968489,231.676666666666,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.IntegrationServices.Host" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.integrationservices.infrastructure" Category="Normal" Bounds="6051.12593333334,317.220545397943,277.96,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.IntegrationServices.Infrastructure" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.integrationservices.policy" Category="Normal" Bounds="7038.15619015132,317.22070125069,237.436666666666,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.IntegrationServices.Policy" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.integrationservices.registration" Category="Normal" Bounds="5750.84916666667,317.220597434476,270.276666666667,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.IntegrationServices.Registration" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.integrationservices.webapi" Category="Normal" Bounds="6291.5726,194.12034229055,248.736666666667,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.IntegrationServices.WebApi" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.integrationservices.webapi.common" Category="Normal" Bounds="6935.13941126531,261.260545397943,300.29,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.IntegrationServices.WebApi.Common" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.keyadminservices" Category="Normal" Bounds="1227.83085934957,222.839526672363,199.626666666667,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.KeyAdminServices" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.keyadminservices.host" Category="EntryPoint" Bounds="1875.52484000991,56.5999587367777,226.936666666667,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.KeyAdminServices.Host" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.keyadminservices.infrastructure" Category="Normal" Bounds="265.884192682902,265.342952270508,273.22,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.KeyAdminServices.Infrastructure" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.keyadminservices.webapi" Category="Normal" Bounds="920.244494404998,112.559924651986,243.996666666667,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.KeyAdminServices.WebApi" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.layerondemand" Category="Normal" Bounds="273.110100029839,335.759883422852,192.35,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.LayerOnDemand" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.mate" Category="Normal" Bounds="4686.88866666667,250.080344702593,130.736666666667,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.Mate" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.mate.attestation" Category="Normal" Bounds="1447.96128580729,110.919317499222,191.546666666667,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.Mate.Attestation" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.mate.attestation.android" Category="Normal" Bounds="2648.3583734809,55.9596593680246,236.92,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.Mate.Attestation.Android" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.mate.attestation.ios" Category="Normal" Bounds="2408.89504231771,24.1476358978272,209.463333333333,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.Mate.Attestation.Ios" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.mate.azure" Category="Normal" Bounds="3646.21213767558,111.919981536901,163.743333333333,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.Mate.Azure" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.mate.datacollection" Category="Normal" Bounds="3177.96473333333,167.880012740847,210.916666666667,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.Mate.DataCollection" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.mate.host" Category="EntryPoint" Bounds="3252.26601868921,0,158.046666666667,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.Mate.Host" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.mate.infrastructure" Category="Normal" Bounds="5218.6599660669,349.787507473019,204.33,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.Mate.Infrastructure" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.mate.monitoring" Category="Normal" Bounds="4720.582,111.920073834037,192.873333333333,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.Mate.Monitoring" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.mate.monitoring.rules" Category="Normal" Bounds="4077.56446601159,55.9600033424674,223.716666666667,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.Mate.Monitoring.Rules" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.mate.stores.entityframework" Category="Normal" Bounds="2475.89157552083,135.094435607041,256.863333333333,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.Mate.Stores.EntityFramework" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.mate.utility" Category="Normal" Bounds="4039.25162106313,111.920041943885,164.24,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.Mate.Utility" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.paymentgateway.infrastructure" Category="Normal" Bounds="5058.71553333333,223.839978227137,268.066666666667,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.PaymentGateway.Infrastructure" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.paymentgateway.webapi.client" Category="Normal" Bounds="2762.75509605785,111.919986795618,271.82,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.PaymentGateway.WebApi.Client" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.paymentgateway.webapi.common" Category="Normal" Bounds="3703.2116,167.879986795618,290.396666666667,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.PaymentGateway.WebApi.Common" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.platform.appcontext" Category="Normal" Bounds="3874.44442671253,391.719900122568,214.22,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.Platform.AppContext" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.platform.environment" Category="Normal" Bounds="1489.07972005208,390.719817499222,218.183333333333,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.Platform.Environment" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.platform.infrastructure" Category="Normal" Bounds="2595.08717610319,335.760182242584,222.2,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.Platform.Infrastructure" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.platform.servicekeyretriever" Category="Normal" Bounds="3522.9315,279.799879504324,254.113333333333,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.Platform.ServiceKeyRetriever" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.platform.support.sctl" Category="Normal" Bounds="3048.31796666667,279.799978333704,215.236666666667,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.Platform.Support.Sctl" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.platform.tokens" Category="Normal" Bounds="2797.13453333333,223.839978365308,187.476666666666,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.Platform.Tokens" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.platform.tokens.issuance" Category="Normal" Bounds="1968.09139241536,139.157063170138,234.963333333333,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.Platform.Tokens.Issuance" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.policy" Category="Normal" Bounds="6584.26123705118,373.180732151726,133.98,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.Policy" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.readers.models" Category="Normal" Bounds="5356.7823,223.83996286563,187.08,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.Readers.Models" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.readerservices" Category="Normal" Bounds="3952.70503333333,223.839997997429,182.626666666667,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.ReaderServices" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.readerservices.host" Category="EntryPoint" Bounds="3837.62765547368,55.9600419438855,209.936666666666,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.ReaderServices.Host" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.readerservices.infrastructure" Category="Normal" Bounds="5464.62906666667,279.800024649109,256.22,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.ReaderServices.Infrastructure" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.readerservices.webapi" Category="Normal" Bounds="4959.33876666667,167.879974896997,226.996666666667,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.ReaderServices.WebApi" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.readertranslation" Category="Normal" Bounds="4459.43856666667,223.840012913807,197.45,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.ReaderTranslation" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.readertranslation.host" Category="EntryPoint" Bounds="3391.45206272451,111.920021359293,224.76,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.ReaderTranslation.Host" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.readertranslation.infrastructure" Category="Normal" Bounds="5058.71553333333,279.79996286563,271.043333333333,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.ReaderTranslation.Infrastructure" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.readertranslation.webapi" Category="Normal" Bounds="4228.24846666667,167.880024649109,241.82,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.ReaderTranslation.WebApi" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.readertranslation.webapi.client" Category="Normal" Bounds="6238.7002660669,373.180505149854,274.796666666667,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.ReaderTranslation.WebApi.Client" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.schemas" Category="Normal" Bounds="3507.84578765224,429.140544294656,150.03,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.Schemas" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.schemas.newtonsoft" Category="Normal" Bounds="4146.72039779206,373.180544294656,214.39,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.Schemas.Newtonsoft" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.sctl" Category="UnusedAssembly" Bounds="3266.4814,223.840004608616,122.4,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.Sctl" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.sctl.aescmac" Category="Normal" Bounds="1867.3341398112,195.117163170138,173.526666666667,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.Sctl.AesCmac" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.sctl.host" Category="EntryPoint" Bounds="2797.13453333333,167.880053285111,149.71,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.Sctl.Host" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.sctl.http" Category="Normal" Bounds="1667.47085934957,277.452418823242,148.706666666667,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.Sctl.Http" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.sctl.http.shared" Category="Normal" Bounds="2360.14190429688,388.624537963867,188.093333333333,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.Sctl.Http.Shared" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.sctl.infrastructure" Category="UnusedAssembly" Bounds="3485.21050943652,335.760182242584,195.993333333333,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.Sctl.Infrastructure" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.sctl.protocol" Category="Normal" Bounds="3111.93384276986,391.720282242584,169.5,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.Sctl.Protocol" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.sctl.routemapping" Category="Normal" Bounds="1510.50717854818,333.412528707886,203.743333333333,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.Sctl.RouteMapping" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.servicegateway.host" Category="EntryPoint" Bounds="5494.56896666667,167.87996286563,213.386666666666,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.ServiceGateway.Host" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.services.infrastructure" Category="Normal" Bounds="3703.2116,223.839958492299,219.493333333333,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.Services.Infrastructure" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.softposservices" Category="Normal" Bounds="2581.60763834635,195.117163170138,185.526666666667,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.SoftPosServices" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.softposservices.data.entityframework" Category="Normal" Bounds="894.110859349569,224.477973777553,303.72,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.SoftPosServices.Data.EntityFramework" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.softposservices.host" Category="EntryPoint" Bounds="2403.05493326823,-31.8124641021729,212.836666666667,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.SoftPosServices.Host" ProcessorArchitecture="MSIL" UseManualLocation="True" />
+    <Node Id="goodfellow.softposservices.infrastructure" Category="Normal" Bounds="2066.30047363281,307.037363170138,259.12,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.SoftPosServices.Infrastructure" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.softposservices.schemas" Category="Normal" Bounds="2847.28717610319,373.180598754883,234.646666666667,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.SoftPosServices.Schemas" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.softposservices.webapi" Category="Normal" Bounds="967.817066666668,280.439923695714,229.896666666667,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.SoftPosServices.WebApi" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.terminalservices" Category="Normal" Bounds="4500.06856666667,138.160344702593,190.513333333333,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.TerminalServices" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.terminalservices.host" Category="EntryPoint" Bounds="3589.80422214034,55.9600728150828,217.823333333333,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.TerminalServices.Host" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.terminalservices.infrastructure" Category="Normal" Bounds="4165.3318,223.840024649109,264.106666666667,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.TerminalServices.Infrastructure" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.terminalservices.policy" Category="Normal" Bounds="6666.5428,307.93286975735,223.583333333333,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.TerminalServices.Policy" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.terminalservices.webapi" Category="Normal" Bounds="4943.45543333333,111.920004920709,234.883333333333,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.TerminalServices.WebApi" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.transactionprocessingservices.host" Category="EntryPoint" Bounds="5971.81916666667,149.340603124427,289.753333333333,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.TransactionProcessingServices.Host" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.transactionprocessingservices.infrastructure" Category="Normal" Bounds="5776.85668405273,429.140764976778,336.036666666667,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.TransactionProcessingServices.Infrastructure" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.transactionprocessingservices.processor" Category="Normal" Bounds="5750.84916666667,261.260597434476,316.176666666666,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.TransactionProcessingServices.Processor" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.transactionprocessingservices.processor.terminalhost" Category="Normal" Bounds="7323.27956666667,205.300651377454,388.1,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.TransactionProcessingServices.Processor.TerminalHost" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.transactionprocessingservices.processor.virtual" Category="Normal" Bounds="6940.09946666667,205.300597498469,353.18,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.TransactionProcessingServices.Processor.Virtual" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.transactionprocessingservices.terminalhost.client" Category="Normal" Bounds="5452.9900660669,373.180785936017,367.343333333333,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.TransactionProcessingServices.TerminalHost.Client" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.transactionprocessingservices.webapi" Category="Normal" Bounds="6598.32603432221,251.972844354083,306.813333333334,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.TransactionProcessingServices.WebApi" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.transactionprocessingservices.webapi.client" Category="Normal" Bounds="6570.30936666667,164.716454283098,339.79,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.TransactionProcessingServices.WebApi.Client" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.transactionprocessingservices.webapi.common" Category="Normal" Bounds="5850.33349940024,373.180558252861,358.366666666667,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.TransactionProcessingServices.WebApi.Common" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.virtualreader" Category="Normal" Bounds="4023.60836666667,167.880015297914,174.64,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.VirtualReader" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.virtualreader.host" Category="EntryPoint" Bounds="3064.57519605785,111.920028226644,201.95,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.VirtualReader.Host" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.virtualreader.infrastructure" Category="Normal" Bounds="2307.47085934957,251.077266235352,248.233333333334,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.VirtualReader.Infrastructure" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.zaffreservices" Category="Normal" Bounds="1460.65752601624,277.452418823242,176.813333333333,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.ZaffreServices" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.zaffreservices.data.entityframework" Category="Normal" Bounds="569.104192682902,224.477973777553,295.006666666667,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.ZaffreServices.Data.EntityFramework" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.zaffreservices.host" Category="EntryPoint" Bounds="1531.59787923177,27.2368631701383,204.123333333333,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.ZaffreServices.Host" ProcessorArchitecture="MSIL" UseManualLocation="True" />
+    <Node Id="goodfellow.zaffreservices.infrastructure" Category="Normal" Bounds="1230.10050943653,334.759700317383,250.406666666667,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.ZaffreServices.Infrastructure" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.zaffreservices.webapi" Category="Normal" Bounds="2797.13453333333,279.799913931586,221.183333333333,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.ZaffreServices.WebApi" ProcessorArchitecture="MSIL" />
+    <Node Id="goodfellow.zaffreservices.webapi.client" Category="Normal" Bounds="4395.9119,320.686984282167,254.16,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.ZaffreServices.WebApi.Client" ProcessorArchitecture="MSIL" />
+    <Node Id="mypinpad.algorithms.neonserver" Category="UnusedAssembly" Bounds="1810.97015434647,943.38801947597,217.886666666667,25.96" Icon="CodeSchema_Assembly" Label="MyPinPad.Algorithms.NeonServer" ProcessorArchitecture="MSIL" UseManualLocation="True" />
+    <Node Id="mypinpad.appleservices" Category="Normal" Bounds="1249.45786702474,110.919317499222,168.503333333333,25.96" Icon="CodeSchema_Assembly" Label="MyPinPad.AppleServices" ProcessorArchitecture="MSIL" />
+    <Node Id="mypinpad.aspnetcore.authentication.bearertoken" Category="Normal" Bounds="4881.32653273357,335.75996286563,307.333333333333,25.96" Icon="CodeSchema_Assembly" Label="MyPinPad.AspNetCore.Authentication.BearerToken" ProcessorArchitecture="MSIL" />
+    <Node Id="mypinpad.common.primitives" Category="Normal" Bounds="3691.51046780203,447.679900122568,197.77,25.96" Icon="CodeSchema_Assembly" Label="MyPinPad.Common.Primitives" ProcessorArchitecture="MSIL" />
+    <Node Id="mypinpad.containers.azure.keyvault" Category="UnusedAssembly" Bounds="2575.00702735358,1026.58601306603,232.683333333333,25.96" Icon="CodeSchema_Assembly" Label="MyPinPad.Containers.Azure.KeyVault" ProcessorArchitecture="MSIL" UseManualLocation="True" />
+    <Node Id="mypinpad.cryptography.drbg" Category="Normal" Bounds="2466.98638346354,519.877763170138,196.946666666667,25.96" Icon="CodeSchema_Assembly" Label="MyPinPad.Cryptography.Drbg" ProcessorArchitecture="MSIL" UseManualLocation="True" />
+    <Node Id="mypinpad.cryptography.drbg.services" Category="Normal" Bounds="958.163842769858,336.386285001046,241.936666666667,25.96" Icon="CodeSchema_Assembly" Label="MyPinPad.Cryptography.Drbg.Services" ProcessorArchitecture="MSIL" />
+    <Node Id="mypinpad.cryptography.ecies" Category="UnusedAssembly" Bounds="3293.55473333333,279.799944176071,199.376666666667,25.96" Icon="CodeSchema_Assembly" Label="MyPinPad.Cryptography.ECIES" ProcessorArchitecture="MSIL" />
+    <Node Id="mypinpad.cryptography.jsonwebsignature" Category="Normal" Bounds="896.184396057845,168.519966438568,268.056666666667,25.96" Icon="CodeSchema_Assembly" Label="MyPinPad.Cryptography.JsonWebSignature" ProcessorArchitecture="MSIL" />
+    <Node Id="mypinpad.cryptography.x25519" Category="Normal" Bounds="2355.42045084635,307.037363170138,209.666666666667,25.96" Icon="CodeSchema_Assembly" Label="MyPinPad.Cryptography.X25519" ProcessorArchitecture="MSIL" />
+    <Node Id="mypinpad.emv" Category="Normal" Bounds="4248.67513333334,317.220587240947,117.236666666667,25.96" Icon="CodeSchema_Assembly" Label="MyPinPad.Emv" ProcessorArchitecture="MSIL" />
+    <Node Id="mypinpad.extensions.configuration" Category="UnusedAssembly" Bounds="2307.26682101314,970.62591306603,226.15,25.96" Icon="CodeSchema_Assembly" Label="MyPinPad.Extensions.Configuration" ProcessorArchitecture="MSIL" UseManualLocation="True" />
+    <Node Id="mypinpad.googleservices" Category="Normal" Bounds="1669.50802408854,83.1969631701383,176.016666666667,25.96" Icon="CodeSchema_Assembly" Label="MyPinPad.GoogleServices" ProcessorArchitecture="MSIL" />
+    <Node Id="mypinpad.guidgenerators" Category="UnusedAssembly" Bounds="901.586821013141,943.38801947597,178.3,25.96" Icon="CodeSchema_Assembly" Label="MyPinPad.GuidGenerators" ProcessorArchitecture="MSIL" UseManualLocation="True" />
+    <Node Id="mypinpad.hsminternals" Category="UnusedAssembly" Bounds="707.15682101314,943.38801947597,164.43,25.96" Icon="CodeSchema_Assembly" Label="MyPinPad.HsmInternals" ProcessorArchitecture="MSIL" UseManualLocation="True" />
+    <Node Id="mypinpad.obfuscationmappings" Category="UnusedAssembly" Bounds="1568.85682101314,943.38801947597,212.113333333333,25.96" Icon="CodeSchema_Assembly" Label="MyPinPad.ObfuscationMappings" ProcessorArchitecture="MSIL" UseManualLocation="True" />
+    <Node Id="mypinpad.obfuscationmappings.deobfuscatephrase" Category="UnusedAssembly" Bounds="3101.08700684577,943.38801947597,316.28,25.96" Icon="CodeSchema_Assembly" Label="MyPinPad.ObfuscationMappings.DeobfuscatePhrase" ProcessorArchitecture="MSIL" UseManualLocation="True" />
+    <Node Id="mypinpad.payshield.communication" Category="Normal" Bounds="2319.31764648438,195.117163170138,232.29,25.96" Icon="CodeSchema_Assembly" Label="MyPinPad.PayShield.Communication" ProcessorArchitecture="MSIL" />
+    <Node Id="mypinpad.payshieldgateway.common" Category="Normal" Bounds="4686.88866666667,194.120344702593,242.45,25.96" Icon="CodeSchema_Assembly" Label="MyPinPad.PayShieldGateway.Common" ProcessorArchitecture="MSIL" />
+    <Node Id="mypinpad.payshieldgateway.host" Category="EntryPoint" Bounds="3341.5975379993,55.9600182607786,218.206666666666,25.96" Icon="CodeSchema_Assembly" Label="MyPinPad.PayShieldGateway.Host" ProcessorArchitecture="MSIL" />
+    <Node Id="mypinpad.payshieldhsmclient" Category="Normal" Bounds="1737.2632014974,389.372628707886,199.953333333333,25.96" Icon="CodeSchema_Assembly" Label="MyPinPad.PayShieldHsmClient" ProcessorArchitecture="MSIL" />
+    <Node Id="mypinpad.services.abstractions" Category="Normal" Bounds="1350.82606363932,446.679917499222,205.736666666667,25.96" Icon="CodeSchema_Assembly" Label="MyPinPad.Services.Abstractions" ProcessorArchitecture="MSIL" />
+    <Node Id="mypinpad.services.azure" Category="Normal" Bounds="2578.23523763021,391.720271606445,170.48,25.96" Icon="CodeSchema_Assembly" Label="MyPinPad.Services.Azure" ProcessorArchitecture="MSIL" />
+    <Node Id="mypinpad.services.azure.keyvault" Category="UnusedAssembly" Bounds="2058.85687028978,952.381192034564,218.41,25.96" Icon="CodeSchema_Assembly" Label="MyPinPad.Services.Azure.KeyVault" ProcessorArchitecture="MSIL" UseManualLocation="True" />
+    <Node Id="mypinpad.services.common" Category="Normal" Bounds="3605.61144288443,503.639944176071,189.026666666667,25.96" Icon="CodeSchema_Assembly" Label="MyPinPad.Services.Common" />
+    <Node Id="mypinpad.services.entityframework" Category="Normal" Bounds="709.443633333335,280.439985075602,228.373333333333,25.96" Icon="CodeSchema_Assembly" Label="MyPinPad.Services.EntityFramework" ProcessorArchitecture="MSIL" />
+    <Node Id="mypinpad.services.extensions" Category="UnusedAssembly" Bounds="3259.51384276986,335.760182242584,195.696666666667,25.96" Icon="CodeSchema_Assembly" Label="MyPinPad.Services.Extensions" ProcessorArchitecture="MSIL" />
+    <Node Id="mypinpad.services.extensions.providermodel" Category="Normal" Bounds="1528.66822616394,503.639936653161,276.446666666667,25.96" Icon="CodeSchema_Assembly" Label="MyPinPad.Services.Extensions.ProviderModel" ProcessorArchitecture="MSIL" />
+    <Node Id="mypinpad.services.hosting" Category="Normal" Bounds="54.3375260162353,231.077266235352,181.546666666667,25.96" Icon="CodeSchema_Assembly" Label="MyPinPad.Services.Hosting" ProcessorArchitecture="MSIL" UseManualLocation="True" />
+    <Node Id="mypinpad.services.infrastructure" Category="UnusedAssembly" Bounds="1327.79015434647,943.38801947597,211.066666666667,25.96" Icon="CodeSchema_Assembly" Label="MyPinPad.Services.Infrastructure" ProcessorArchitecture="MSIL" UseManualLocation="True" />
+    <Node Id="mypinpad.services.logging" Category="Normal" Bounds="-384.994444802202,345.80869387909,183.65,25.96" Icon="CodeSchema_Assembly" Label="MyPinPad.Services.Logging" ProcessorArchitecture="MSIL" UseManualLocation="True" />
+    <Node Id="mypinpad.services.webapi.common" Category="UnusedAssembly" Bounds="2837.6903401791,943.38801947597,233.396666666667,25.96" Icon="CodeSchema_Assembly" Label="MyPinPad.Services.WebApi.Common" ProcessorArchitecture="MSIL" UseManualLocation="True" />
+    <Node Id="ocelot" Category="Normal" Bounds="5359.75896666667,293.827484441574,74.8699999999999,25.96" Icon="CodeSchema_Assembly" Label="Ocelot" ProcessorArchitecture="MSIL" />
+    <Node Id="polly" Category="Normal" Bounds="3296.52529605785,111.920044603051,64.9266666666667,25.96" Icon="CodeSchema_Assembly" Label="Polly" ProcessorArchitecture="MSIL" />
+    <Node Id="qrcoder" Category="Normal" Bounds="6920.12613760152,317.220569271278,88.0299999999997,25.96" Icon="CodeSchema_Assembly" Label="QRCoder" ProcessorArchitecture="MSIL" />
+    <Node Id="serilog" Category="Normal" Bounds="-329.087557103953,623.847180989582,76.7333333333333,25.96" Icon="CodeSchema_Assembly" Label="Serilog" ProcessorArchitecture="MSIL" UseManualLocation="True" />
+    <Node Id="serilog.aspnetcore" Category="Normal" Bounds="-367.574898783665,418.917663170138,143.45,25.96" Icon="CodeSchema_Assembly" Label="Serilog.AspNetCore" ProcessorArchitecture="MSIL" UseManualLocation="True" />
+    <Node Id="serilog.extensions.hosting" Category="Normal" Bounds="-378.624539490045,481.837855834961,179.03,25.96" Icon="CodeSchema_Assembly" Label="Serilog.Extensions.Hosting" ProcessorArchitecture="MSIL" UseManualLocation="True" />
+    <Node Id="serilog.extensions.logging" Category="Normal" Bounds="-382.390640436698,551.376352189873,181.133333333333,25.96" Icon="CodeSchema_Assembly" Label="Serilog.Extensions.Logging" ProcessorArchitecture="MSIL" UseManualLocation="True" />
+    <Node Id="serilog.formatting.compact" Category="UnusedAssembly" Bounds="1109.88682101314,943.38801947597,187.903333333334,25.96" Icon="CodeSchema_Assembly" Label="Serilog.Formatting.Compact" ProcessorArchitecture="MSIL" UseManualLocation="True" />
+    <Node Id="serilog.settings.configuration" Category="Normal" Bounds="-169.742917002456,485.144775867853,197.416666666667,25.96" Icon="CodeSchema_Assembly" Label="Serilog.Settings.Configuration" ProcessorArchitecture="MSIL" UseManualLocation="True" />
+    <Node Id="serilog.sinks.console" Category="Normal" Bounds="-592.056593363065,483.554880048015,151.616666666667,25.96" Icon="CodeSchema_Assembly" Label="Serilog.Sinks.Console" ProcessorArchitecture="MSIL" UseManualLocation="True" />
+    <Node Id="serilog.sinks.debug" Category="UnusedAssembly" Bounds="532.496821013141,943.38801947597,144.66,25.96" Icon="CodeSchema_Assembly" Label="Serilog.Sinks.Debug" ProcessorArchitecture="MSIL" UseManualLocation="True" />
+    <Node Id="serilog.sinks.file" Category="UnusedAssembly" Bounds="375.48682101314,943.38801947597,127.01,25.96" Icon="CodeSchema_Assembly" Label="Serilog.Sinks.File" ProcessorArchitecture="MSIL" UseManualLocation="True" />
+    <Node Id="serilog.sinks.periodicbatching" Category="Normal" Bounds="1586.56281136976,447.679884187273,197.39,25.96" Icon="CodeSchema_Assembly" Label="Serilog.Sinks.PeriodicBatching" ProcessorArchitecture="MSIL" />
+    <Node Id="swashbuckle.aspnetcore.swagger" Category="Normal" Bounds="7452.52018971216,306.040372949105,222.276666666667,25.96" Icon="CodeSchema_Assembly" Label="Swashbuckle.AspNetCore.Swagger" ProcessorArchitecture="MSIL" />
+    <Node Id="swashbuckle.aspnetcore.swaggergen" Category="Normal" Bounds="7741.37966666667,250.080347334633,243.576666666667,25.96" Icon="CodeSchema_Assembly" Label="Swashbuckle.AspNetCore.SwaggerGen" ProcessorArchitecture="MSIL" />
+    <Node Id="swashbuckle.aspnetcore.swaggerui" Category="Normal" Bounds="6291.5726,111.920115204943,233.713333333333,25.96" Icon="CodeSchema_Assembly" Label="Swashbuckle.AspNetCore.SwaggerUI" ProcessorArchitecture="MSIL" />
+  </Nodes>
+  <Links>
+    <Link Source="goodfellow.cryptographyservices" Target="goodfellow.cryptographyservices.infrastructure" Bounds="1946.6240234375,221.0771484375,208.721923828125,109.970642089844" />
+    <Link Source="goodfellow.cryptographyservices" Target="goodfellow.dukptaes" Bounds="2252.58325195313,221.0771484375,1472.66357421875,112.616241455078" />
+    <Link Source="goodfellow.cryptographyservices" Target="goodfellow.esl" Bounds="2252.58325195313,221.0771484375,886.920166015625,110.310882568359" />
+    <Link Source="goodfellow.cryptographyservices" Target="goodfellow.hsmservices.client" Bounds="1438.75756835938,218.52197265625,632.136474609375,60.1289672851563" />
+    <Link Source="goodfellow.cryptographyservices" Target="goodfellow.platform.servicekeyretriever" Bounds="2281.93115234375,157.524322509766,1305.64770507813,120.159729003906" />
+    <Link Source="goodfellow.cryptographyservices.client" Target="goodfellow.cryptographyservices.infrastructure" Bounds="1909.47863007429,277.037266235352,49.5485310649119,49.9835514538093" />
+    <Link Source="goodfellow.cryptographyservices.client" Target="mypinpad.cryptography.drbg.services" Bounds="1161.61743164063,277.037261962891,772.093627929688,57.7982482910156" />
+    <Link Source="goodfellow.cryptographyservices.entityframework" Target="goodfellow.cryptographyservices.infrastructure" Bounds="1419.77062988281,192.839416503906,454.345092773438,133.575805664063" />
+    <Link Source="goodfellow.cryptographyservices.entityframework" Target="mypinpad.services.entityframework" Bounds="945.503112792969,192.839416503906,351.559997558594,87.1707153320313" />
+    <Link Source="goodfellow.cryptographyservices.host" Target="goodfellow.cryptographyservices" Bounds="2197.47583007813,50.1076354980469,53.54931640625,137.106658935547" />
+    <Link Source="goodfellow.cryptographyservices.host" Target="goodfellow.cryptographyservices.entityframework" Bounds="1487.87646484375,50.1076354980469,726.03564453125,115.877624511719" />
+    <Link Source="goodfellow.cryptographyservices.host" Target="mypinpad.services.hosting" Bounds="223.732879638672,43.0345039367676,1909.39553833008,186.396739959717" />
+    <Link Source="goodfellow.cryptographyservices.infrastructure" Target="mypinpad.services.common" Bounds="1966.4609375,359.372528076172,1630.17114257813,150.203216552734" />
+    <Link Source="goodfellow.data" Target="goodfellow.data.classification" Bounds="4568.45441508941,464.433077826271,777.890588128455,45.7881068688295" />
+    <Link Source="goodfellow.data.stores" Target="goodfellow.data" Bounds="4851.32643273357,395.660206297994,486.078777916115,56.5083957769558" />
+    <Link Source="goodfellow.data.stores.entityframework" Target="goodfellow.data.stores" Bounds="3643.20015520812,235.66884901287,1035.919486038,138.401740006274" />
+    <Link Source="goodfellow.data.stores.entityframework" Target="mypinpad.services.entityframework" Bounds="902.292236328125,219.53825378418,2516.58935546875,59.2551116943359" />
+    <Link Source="goodfellow.datacollection" Target="goodfellow.schemas.newtonsoft" Bounds="4338.44601541437,281.752147050845,524.064211545424,89.9066205592408" />
+    <Link Source="goodfellow.datacollection" Target="mypinpad.services.common" Bounds="3792.90356445313,281.752136230469,1125.73168945313,220.512023925781" />
+    <Link Source="goodfellow.esl" Target="mypinpad.cryptography.drbg" Bounds="2626.81616210938,361.720275878906,523.393798828125,156.001953125" />
+    <Link Source="goodfellow.esl.libesl" Target="goodfellow.esl" Bounds="2277.16552734375,275.356140136719,825.79833984375,67.8284301757813" />
+    <Link Source="goodfellow.esl.libesl" Target="mypinpad.services.common" Bounds="2277.16381835938,275.359375,1375.1435546875,225.456665039063" />
+    <Link Source="goodfellow.esl.managed" Target="goodfellow.esl.libesl" Bounds="1935.03247070313,165.117065429688,202.698974609375,83.9278717041016" />
+    <Link Source="goodfellow.esl.managed" Target="goodfellow.layerondemand" Bounds="425.886810302734,165.117065429688,1376.54238891602,168.291015625" />
+    <Link Source="goodfellow.esl.managed" Target="mypinpad.cryptography.x25519" Bounds="1935.03247070313,165.117065429688,413.034912109375,141.185302734375" />
+    <Link Source="goodfellow.events" Target="goodfellow.data" Bounds="4809.47819965261,332.000344702593,531.538357540858,113.795497690533" />
+    <Link Source="goodfellow.events" Target="goodfellow.schemas.newtonsoft" Bounds="4358.5175786838,328.35024717162,321.554421316197,43.6204825672162" />
+    <Link Source="goodfellow.events" Target="mypinpad.services.common" Bounds="3786.96728515625,332.00048828125,931.4111328125,170.161895751953" />
+    <Link Source="goodfellow.events.publisher.azure" Target="goodfellow.events" Bounds="3236.4813,242.437458489121,1434.60221667603,72.6450337019935" />
+    <Link Source="goodfellow.events.publisher.azure" Target="mypinpad.services.azure" Bounds="2725.56567382813,249.800079345703,384.042724609375,139.792388916016" />
+    <Link Source="goodfellow.hsmservices.client" Target="goodfellow.hsmservices.infrastructure" Bounds="204.298217773438,304.759613037109,1061.28723144531,29.4462890625" />
+    <Link Source="goodfellow.hsmservices.client" Target="mypinpad.cryptography.drbg.services" Bounds="1144.26604853792,304.75961730957,128.614675536554,29.618803272426" />
+    <Link Source="goodfellow.hsmservices.infrastructure" Target="mypinpad.payshieldhsmclient" Bounds="195.433380126953,320.443420410156,1571.16317749023,67.0871887207031" />
+    <Link Source="goodfellow.installationservices" Target="goodfellow.data.stores" Bounds="4846.11779975993,193.839924058095,926.10208922888,177.645149622883" />
+    <Link Source="goodfellow.installationservices" Target="goodfellow.events" Bounds="4826.55402926323,193.550608793467,913.116329313303,115.629750164646" />
+    <Link Source="goodfellow.installationservices" Target="goodfellow.installationservices.infrastructure" Bounds="5898.16450015541,193.839924058095,532.58802658839,118.622796375981" />
+    <Link Source="goodfellow.installationservices" Target="goodfellow.installationservices.policy" Bounds="5893.71149280141,193.839924058095,259.207828968246,62.5095091230249" />
+    <Link Source="goodfellow.installationservices" Target="goodfellow.services.infrastructure" Bounds="3931.70150531492,183.674082423475,1806.25422801842,49.867579055718" />
+    <Link Source="goodfellow.installationservices.infrastructure" Target="goodfellow.data" Bounds="5483.48150148054,340.379336701489,908.419841291331,111.329930034608" />
+    <Link Source="goodfellow.installationservices.policy" Target="goodfellow.policy" Bounds="6264.79593879625,284.419351267185,328.448524892867,86.47004355481" />
+    <Link Source="goodfellow.installationservices.webapi" Target="goodfellow.installationservices.infrastructure" Bounds="5442.96775550963,193.840005683359,943.402340720403,119.448822392622" />
+    <Link Source="goodfellow.installationservices.webapi" Target="mypinpad.services.common" Bounds="3789.19873046875,193.839889526367,1512.70458984375,308.362442016602" />
+    <Link Source="goodfellow.integrationservices" Target="goodfellow.events" Bounds="4826.6205587616,266.390013901316,1537.33880790507,50.0960398650593" />
+    <Link Source="goodfellow.integrationservices" Target="goodfellow.integrationservices.infrastructure" Bounds="6252.21619552275,276.04024669978,160.561278215142,39.0532475398155" />
+    <Link Source="goodfellow.integrationservices" Target="goodfellow.integrationservices.policy" Bounds="6568.32603333333,272.992662167357,461.285642445467,44.8378468438778" />
+    <Link Source="goodfellow.integrationservices" Target="goodfellow.transactionprocessingservices.infrastructure" Bounds="5991.17323733945,276.04024669978,437.183050639434,150.176629475405" />
+    <Link Source="goodfellow.integrationservices" Target="qrcoder" Bounds="6562.41896845528,276.04024669978,348.787865086502,47.0237012865288" />
+    <Link Source="goodfellow.integrationservices.host" Target="goodfellow.data.stores.entityframework" Bounds="3680.83707198596,80.3840012852827,1300.90820527635,128.944557863614" />
+    <Link Source="goodfellow.integrationservices.host" Target="goodfellow.events.publisher.azure" Bounds="3245.44885153822,78.8032917717926,1735.91498071279,147.807365523566" />
+    <Link Source="goodfellow.integrationservices.host" Target="goodfellow.integrationservices" Bounds="5188.73745107197,81.920044396849,1176.95910798547,166.896614133747" />
+    <Link Source="goodfellow.integrationservices.host" Target="goodfellow.integrationservices.webapi" Bounds="5212.21259671352,80.989341660486,1072.43488828642,112.355780584326" />
+    <Link Source="goodfellow.integrationservices.host" Target="goodfellow.readers.models" Bounds="5124.50441463545,81.920044396849,290.387458238879,138.055630541064" />
+    <Link Source="goodfellow.integrationservices.host" Target="goodfellow.transactionprocessingservices.webapi.client" Bounds="5213.04049891767,76.6078133458138,1348.56041847618,89.2662161569547" />
+    <Link Source="goodfellow.integrationservices.host" Target="mypinpad.aspnetcore.authentication.bearertoken" Bounds="5039.83239938078,81.920044396849,54.4838740793248,245.054442476073" />
+    <Link Source="goodfellow.integrationservices.host" Target="mypinpad.services.hosting" Bounds="244.882476806641,81.9196853637695,4766.88314819336,176.025718688965" />
+    <Link Source="goodfellow.integrationservices.host" Target="swashbuckle.aspnetcore.swaggerui" Bounds="5213.04049891767,73.8837504339452,1069.54028611512,45.6454492846494" />
+    <Link Source="goodfellow.integrationservices.infrastructure" Target="goodfellow.data.stores" Bounds="4860.31945709982,335.675625235786,1190.80647623352,46.9115018621274" />
+    <Link Source="goodfellow.integrationservices.infrastructure" Target="mypinpad.common.primitives" Bounds="3898.26719740537,337.756140699985,2152.85873592796,117.039353512278" />
+    <Link Source="goodfellow.integrationservices.policy" Target="goodfellow.policy" Bounds="6727.1866176755,343.089231145694,313.23441681212,34.6673266726222" />
+    <Link Source="goodfellow.integrationservices.registration" Target="goodfellow.data.stores" Bounds="4860.31514703106,336.974599782735,890.534019635609,44.6392921343528" />
+    <Link Source="goodfellow.integrationservices.registration" Target="mypinpad.common.primitives" Bounds="3898.26307822486,338.613519636039,1852.58608844181,115.331173985369" />
+    <Link Source="goodfellow.integrationservices.webapi" Target="goodfellow.events" Bounds="4826.60511973495,215.449792674889,1464.96748026505,98.3503836009408" />
+    <Link Source="goodfellow.integrationservices.webapi" Target="goodfellow.integrationservices.registration" Bounds="5950.63372085233,220.08034229055,409.427591787899,95.1039050639607" />
+    <Link Source="goodfellow.integrationservices.webapi" Target="goodfellow.integrationservices.webapi.common" Bounds="6539.1386706275,219.458005249868,407.788652498068,40.9042798746638" />
+    <Link Source="goodfellow.integrationservices.webapi" Target="goodfellow.readertranslation.infrastructure" Bounds="5338.73681520622,215.822450049427,952.835784793783,66.8235729203712" />
+    <Link Source="goodfellow.integrationservices.webapi" Target="swashbuckle.aspnetcore.swaggergen" Bounds="6540.30926666667,211.909299171579,1192.07712059904,46.0941086703862" />
+    <Link Source="goodfellow.integrationservices.webapi.common" Target="goodfellow.integrationservices.infrastructure" Bounds="6338.06839945164,283.626510774826,597.07101181367,37.3245052743906" />
+    <Link Source="goodfellow.keyadminservices" Target="goodfellow.hsmservices.client" Bounds="1328.01531431197,248.799526672363,0.60053561329164,21.0037670941694" />
+    <Link Source="goodfellow.keyadminservices" Target="goodfellow.keyadminservices.infrastructure" Bounds="548.098754882813,248.799530029297,702.366821289063,24.4539794921875" />
+    <Link Source="goodfellow.keyadminservices" Target="mypinpad.services.abstractions" Bounds="1372.35766601563,248.799530029297,114.431518554688,189.199462890625" />
+    <Link Source="goodfellow.keyadminservices.host" Target="goodfellow.keyadminservices" Bounds="1435.24035644531,82.5599594116211,503.222778320313,139.797706604004" />
+    <Link Source="goodfellow.keyadminservices.host" Target="goodfellow.keyadminservices.webapi" Bounds="1173.21716308594,74.1547546386719,702.3076171875,41.7838287353516" />
+    <Link Source="goodfellow.keyadminservices.host" Target="mypinpad.services.hosting" Bounds="223.732879638672,72.9721908569336,1651.79190063477,156.459053039551" />
+    <Link Source="goodfellow.keyadminservices.infrastructure" Target="goodfellow.platform.infrastructure" Bounds="503.324554443359,290.725830078125,2161.70034790039,41.7221374511719" />
+    <Link Source="goodfellow.keyadminservices.webapi" Target="goodfellow.keyadminservices.infrastructure" Bounds="442.570343017578,138.517776489258,529.036773681641,123.419021606445" />
+    <Link Source="goodfellow.layerondemand" Target="mypinpad.cryptography.drbg" Bounds="463.000885009766,361.670745849609,1994.99301147461,166.792510986328" />
+    <Link Source="goodfellow.mate" Target="goodfellow.data.stores" Bounds="4754.08689577279,276.040344702593,12.438261996258,88.2283259584294" />
+    <Link Source="goodfellow.mate" Target="goodfellow.events" Bounds="4750.18637982379,276.040344702593,1.28005250882779,21.0166469615709" />
+    <Link Source="goodfellow.mate" Target="goodfellow.mate.infrastructure" Bounds="4817.26765013294,274.460964965207,420.675721384633,73.7719764900173" />
+    <Link Source="goodfellow.mate.attestation" Target="goodfellow.mate.datacollection" Bounds="1597.78918457031,136.879318237305,1571.18542480469,44.5186920166016" />
+    <Link Source="goodfellow.mate.attestation" Target="mypinpad.cryptography.drbg.services" Bounds="1138.71765136719,136.879318237305,400.092041015625,197.29020690918" />
+    <Link Source="goodfellow.mate.attestation.android" Target="goodfellow.mate.attestation" Bounds="1648.49887988815,74.2626988796725,999.859479486845,44.9290043699205" />
+    <Link Source="goodfellow.mate.attestation.android" Target="mypinpad.googleservices" Bounds="1854.52141537824,72.1364552518628,793.836943996764,21.4227026746972" />
+    <Link Source="goodfellow.mate.attestation.ios" Target="goodfellow.mate.attestation" Bounds="1648.50695800781,49.9508666992188,762.431030273438,72.4006195068359" />
+    <Link Source="goodfellow.mate.attestation.ios" Target="mypinpad.appleservices" Bounds="1426.36193847656,14.0134572982788,1022.76062011719,96.9866037368774" />
+    <Link Source="goodfellow.mate.attestation.ios" Target="mypinpad.common.primitives" Bounds="2547.81469726563,50.1076354980469,1225.86181640625,390.686614990234" />
+    <Link Source="goodfellow.mate.azure" Target="goodfellow.mate.datacollection" Bounds="3395.24335374,135.201263255235,250.986037205221,31.5862977855409" />
+    <Link Source="goodfellow.mate.datacollection" Target="goodfellow.datacollection" Bounds="3388.8814,186.462721257486,1449.75670776819,77.0215496199133" />
+    <Link Source="goodfellow.mate.datacollection" Target="goodfellow.mate" Bounds="3388.8814,186.761775909172,1289.02132699988,72.1374816993105" />
+    <Link Source="goodfellow.mate.host" Target="goodfellow.data.stores.entityframework" Bounds="3344.58181819109,25.9600000000002,181.733021546444,177.461021135077" />
+    <Link Source="goodfellow.mate.host" Target="goodfellow.events.publisher.azure" Bounds="3143.56736570586,25.9600000000002,175.791387223433,191.253782674652" />
+    <Link Source="goodfellow.mate.host" Target="goodfellow.mate.attestation.android" Bounds="2893.69892309944,20.8137598465607,358.567172278163,35.547324513815" />
+    <Link Source="goodfellow.mate.host" Target="goodfellow.mate.attestation.ios" Bounds="2627.35445335171,15.3134726207866,624.911642025892,18.4554532025099" />
+    <Link Source="goodfellow.mate.host" Target="goodfellow.mate.azure" Bounds="3377.30787275838,25.9600000000002,296.095384282924,83.5167673045149" />
+    <Link Source="goodfellow.mate.host" Target="goodfellow.mate.monitoring.rules" Bounds="3410.31268535588,18.1332148190525,658.270856153396,42.9267026306156" />
+    <Link Source="goodfellow.mate.host" Target="goodfellow.mate.stores.entityframework" Bounds="2683.01917835026,25.9596843983241,578.422823205732,107.490405173477" />
+    <Link Source="goodfellow.mate.host" Target="goodfellow.mate.utility" Bounds="3410.0709175674,24.1398962104182,620.724645906578,87.9294867480433" />
+    <Link Source="goodfellow.mate.host" Target="mypinpad.services.hosting" Bounds="244.780807495117,25.9596843719482,3038.45503234863,206.572908401489" />
+    <Link Source="goodfellow.mate.monitoring" Target="goodfellow.mate" Bounds="4762.16114322848,137.880073834037,48.7732386575572,104.051118677169" />
+    <Link Source="goodfellow.mate.monitoring.rules" Target="goodfellow.mate.monitoring" Bounds="4301.28113267826,78.9139380739301,410.336432795927,36.5879651223823" />
+    <Link Source="goodfellow.mate.stores.entityframework" Target="goodfellow.mate.datacollection" Bounds="2732.75490885417,154.274855641838,436.220445702481,21.0598222693657" />
+    <Link Source="goodfellow.mate.stores.entityframework" Target="mypinpad.services.entityframework" Bounds="902.292236328125,155.48567199707,1573.59936523438,123.307571411133" />
+    <Link Source="goodfellow.mate.utility" Target="goodfellow.mate" Bounds="4180.64256977335,137.880041943886,503.551829977035,110.274981172593" />
+    <Link Source="goodfellow.paymentgateway.webapi.client" Target="goodfellow.paymentgateway.webapi.common" Bounds="3034.57509605784,132.90795198953,659.652086007975,38.8674192100912" />
+    <Link Source="goodfellow.paymentgateway.webapi.common" Target="goodfellow.paymentgateway.infrastructure" Bounds="3993.60826666667,186.904070834051,1056.11505395566,43.9622686694912" />
+    <Link Source="goodfellow.paymentgateway.webapi.common" Target="mypinpad.services.common" Bounds="3687.19946289063,193.839797973633,245.6396484375,301.043380737305" />
+    <Link Source="goodfellow.platform.appcontext" Target="goodfellow.data" Bounds="4088.66442671253,408.894673475281,1248.68747048899,48.9026321265456" />
+    <Link Source="goodfellow.platform.infrastructure" Target="goodfellow.platform.environment" Bounds="1690.03662109375,353.289306640625,905.050537109375,37.0584411621094" />
+    <Link Source="goodfellow.platform.infrastructure" Target="mypinpad.common.primitives" Bounds="2817.287109375,353.4677734375,885.151611328125,92.7547302246094" />
+    <Link Source="goodfellow.platform.servicekeyretriever" Target="goodfellow.data.classification" Bounds="3715.58666992188,305.760009765625,701.034912109375,194.726379394531" />
+    <Link Source="goodfellow.platform.servicekeyretriever" Target="goodfellow.platform.infrastructure" Bounds="2826.275390625,305.760009765625,722.36279296875,36.853515625" />
+    <Link Source="goodfellow.platform.servicekeyretriever" Target="mypinpad.services.extensions" Bounds="3434.07674277833,305.759999091187,148.036540140478,28.3097053379889" />
+    <Link Source="goodfellow.platform.support.sctl" Target="goodfellow.platform.appcontext" Bounds="3227.5263671875,305.760070800781,729.54443359375,80.5560913085938" />
+    <Link Source="goodfellow.platform.support.sctl" Target="mypinpad.common.primitives" Bounds="3189.01733398438,305.760070800781,555.419677734375,139.003692626953" />
+    <Link Source="goodfellow.platform.tokens" Target="goodfellow.platform.appcontext" Bounds="2955.30932617188,249.800033569336,1001.76147460938,136.516159057617" />
+    <Link Source="goodfellow.platform.tokens" Target="mypinpad.common.primitives" Bounds="2941.85009765625,249.800033569336,802.5869140625,194.963729858398" />
+    <Link Source="goodfellow.platform.tokens.issuance" Target="goodfellow.platform.tokens" Bounds="2203.0546875,157.715805053711,651.18359375,62.3881378173828" />
+    <Link Source="goodfellow.platform.tokens.issuance" Target="mypinpad.cryptography.drbg.services" Bounds="1161.85107421875,164.9970703125,808.400390625,169.860534667969" />
+    <Link Source="goodfellow.platform.tokens.issuance" Target="mypinpad.services.extensions" Bounds="2203.0546875,159.278366088867,1094.00146484375,174.28547668457" />
+    <Link Source="goodfellow.readers.models" Target="goodfellow.readertranslation.infrastructure" Bounds="5262.42901597354,249.79996286563,128.493988136539,28.0786487621528" />
+    <Link Source="goodfellow.readers.models" Target="mypinpad.services.common" Bounds="3789.19873046875,246.93180847168,1567.58642578125,255.270523071289" />
+    <Link Source="goodfellow.readerservices" Target="goodfellow.cryptographyservices.client" Bounds="2057.05517578125,202.592056274414,1896.13696289063,46.9756164550781" />
+    <Link Source="goodfellow.readerservices" Target="goodfellow.data.stores" Bounds="4107.08361024241,249.799997997429,590.647354538552,121.566210280351" />
+    <Link Source="goodfellow.readerservices" Target="goodfellow.esl" Bounds="3218.00708007813,249.800140380859,783.85107421875,83.23681640625" />
+    <Link Source="goodfellow.readerservices" Target="goodfellow.events" Bounds="4135.25802756911,247.460760404269,535.874560603994,62.4960003452259" />
+    <Link Source="goodfellow.readerservices" Target="goodfellow.platform.support.sctl" Bounds="3272.53681896279,242.57384950459,680.168214370544,42.8588768202447" />
+    <Link Source="goodfellow.readerservices" Target="goodfellow.readerservices.infrastructure" Bounds="4135.3317,240.119428661064,1320.30323611287,47.706603444492" />
+    <Link Source="goodfellow.readerservices" Target="goodfellow.sctl.protocol" Bounds="3290.42333984375,249.800140380859,737.468017578125,150.369323730469" />
+    <Link Source="goodfellow.readerservices.host" Target="goodfellow.data.stores.entityframework" Bounds="3587.91592451945,81.9200419438855,321.20200053644,124.535337466248" />
+    <Link Source="goodfellow.readerservices.host" Target="goodfellow.events.publisher.azure" Bounds="3197.53409832902,81.9200419438855,681.889921317961,140.108521174724" />
+    <Link Source="goodfellow.readerservices.host" Target="goodfellow.platform.tokens" Bounds="2957.98999023438,81.9196166992188,931.5625,139.972213745117" />
+    <Link Source="goodfellow.readerservices.host" Target="goodfellow.readerservices" Bounds="3950.43767816389,81.9200419438855,81.0851296795527,134.21661268912" />
+    <Link Source="goodfellow.readerservices.host" Target="goodfellow.readerservices.webapi" Bounds="4047.53596914369,79.3315198746302,903.111565994583,89.4288704545577" />
+    <Link Source="goodfellow.readerservices.host" Target="mypinpad.services.hosting" Bounds="244.780807495117,81.9196166992188,3627.71333312988,150.612976074219" />
+    <Link Source="goodfellow.readerservices.infrastructure" Target="goodfellow.data" Bounds="5431.16128844289,305.760024649109,147.483445342777,135.823038714305" />
+    <Link Source="goodfellow.readerservices.webapi" Target="goodfellow.readerservices.infrastructure" Bounds="5133.13306611403,193.839974896997,390.511593511515,84.065996623951" />
+    <Link Source="goodfellow.readerservices.webapi" Target="mypinpad.services.common" Bounds="3767.17993164063,193.839889526367,1270.58325195313,307.843673706055" />
+    <Link Source="goodfellow.readertranslation" Target="goodfellow.esl" Bounds="3218.01538085938,249.465560913086,1243.04663085938,83.5975799560547" />
+    <Link Source="goodfellow.readertranslation" Target="goodfellow.readertranslation.infrastructure" Bounds="4656.88856666667,245.505557746159,393.527162504929,34.621400989464" />
+    <Link Source="goodfellow.readertranslation" Target="goodfellow.zaffreservices.webapi.client" Bounds="4530.7779971347,249.800012913807,22.6716561603535,62.4275572677381" />
+    <Link Source="goodfellow.readertranslation" Target="mypinpad.emv" Bounds="4350.59930748327,249.800012913807,172.693046177232,64.280979815184" />
+    <Link Source="goodfellow.readertranslation.host" Target="goodfellow.hsmservices.client" Bounds="1438.75756835938,137.8798828125,1976.36547851563,140.771057128906" />
+    <Link Source="goodfellow.readertranslation.host" Target="goodfellow.platform.servicekeyretriever" Bounds="3515.13244294958,137.880021359293,117.645738679951,135.131885622609" />
+    <Link Source="goodfellow.readertranslation.host" Target="goodfellow.readertranslation" Bounds="3615.5505638756,136.759226607891,834.979495122891,88.635213585986" />
+    <Link Source="goodfellow.readertranslation.host" Target="goodfellow.readertranslation.webapi" Bounds="3616.21206272451,132.339496975318,603.056059915087,39.9218798080998" />
+    <Link Source="goodfellow.readertranslation.host" Target="mypinpad.services.hosting" Bounds="244.780807495117,131.121810913086,3146.67134094238,101.410781860352" />
+    <Link Source="goodfellow.readertranslation.infrastructure" Target="goodfellow.dukptaes" Bounds="3875.10815429688,305.760101318359,1222.74731445313,51.4082641601563" />
+    <Link Source="goodfellow.readertranslation.webapi" Target="goodfellow.readertranslation.infrastructure" Bounds="4447.16711582662,193.840024649109,640.139340041312,84.7783201273964" />
+    <Link Source="goodfellow.readertranslation.webapi" Target="mypinpad.common.primitives" Bounds="3808.759765625,193.839965820313,463.74951171875,247.346343994141" />
+    <Link Source="goodfellow.readertranslation.webapi" Target="mypinpad.services.common" Bounds="3767.17993164063,193.839965820313,505.329345703125,307.843597412109" />
+    <Link Source="goodfellow.readertranslation.webapi.client" Target="mypinpad.services.common" Bounds="3803.60180664063,356.812652587891,2484.18334960938,150.497955322266" />
+    <Link Source="goodfellow.schemas.newtonsoft" Target="goodfellow.schemas" Bounds="3666.87231445313,399.140594482422,538.706298828125,40.6504211425781" />
+    <Link Source="goodfellow.sctl" Target="goodfellow.events" Bounds="3388.8814,240.35981370199,1282.20561693598,74.1627957909233" />
+    <Link Source="goodfellow.sctl" Target="goodfellow.sctl.infrastructure" Bounds="3388.52661132813,248.215072631836,156.087158203125,83.9080047607422" />
+    <Link Source="goodfellow.sctl" Target="mypinpad.cryptography.ecies" Bounds="3342.8885363892,249.800004608616,28.3019350980676,24.1570212938946" />
+    <Link Source="goodfellow.sctl" Target="mypinpad.services.extensions" Bounds="3283.42041015625,249.799987792969,36.51220703125,82.2714538574219" />
+    <Link Source="goodfellow.sctl.aescmac" Target="goodfellow.sctl.protocol" Bounds="2008.51123046875,221.0771484375,1153.33178710938,166.932159423828" />
+    <Link Source="goodfellow.sctl.host" Target="goodfellow.events.publisher.azure" Bounds="2930.8022206764,193.839937754822,127.142941062709,28.0605183847879" />
+    <Link Source="goodfellow.sctl.host" Target="goodfellow.sctl" Bounds="2946.84448242188,188.773254394531,322.760009765625,34.1206665039063" />
+    <Link Source="goodfellow.sctl.host" Target="goodfellow.sctl.aescmac" Bounds="2017.3701171875,181.235855102539,779.764404296875,12.2936553955078" />
+    <Link Source="goodfellow.sctl.host" Target="goodfellow.sctl.http" Bounds="1825.17724609375,193.839935302734,1013.6171875,101.314575195313" />
+    <Link Source="goodfellow.sctl.host" Target="mypinpad.services.hosting" Bounds="244.780807495117,151.066604614258,2552.35371398926,81.4659881591797" />
+    <Link Source="goodfellow.sctl.http" Target="goodfellow.sctl.http.shared" Bounds="1816.1630859375,300.706756591797,547.197265625,86.5096435546875" />
+    <Link Source="goodfellow.sctl.http" Target="goodfellow.sctl.infrastructure" Bounds="1816.17749023438,291.903839111328,1692.01098632813,42.1255798339844" />
+    <Link Source="goodfellow.sctl.http" Target="goodfellow.sctl.routemapping" Bounds="1650.66490423179,303.412418823242,61.1343205894398,26.4287870317384" />
+    <Link Source="goodfellow.sctl.http" Target="mypinpad.services.common" Bounds="1816.1630859375,300.706756591797,1781.91650390625,202.205078125" />
+    <Link Source="goodfellow.sctl.infrastructure" Target="goodfellow.data.classification" Bounds="3680.84204101563,360.1484375,735.779541015625,140.337951660156" />
+    <Link Source="goodfellow.sctl.infrastructure" Target="goodfellow.sctl.protocol" Bounds="3289.42558125131,361.720182242584,204.127129140301,29.5531306244663" />
+    <Link Source="goodfellow.sctl.protocol" Target="mypinpad.common.primitives" Bounds="3276.24584960938,417.680267333984,444.12451171875,61.6127624511719" />
+    <Link Source="goodfellow.servicegateway.host" Target="goodfellow.events.publisher.azure" Bounds="3245.47900173637,183.27161208188,2249.0899649303,50.8374411197125" />
+    <Link Source="goodfellow.servicegateway.host" Target="mypinpad.aspnetcore.authentication.bearertoken" Bounds="5087.40428391178,193.83996286563,470.075713694938,139.3618523976" />
+    <Link Source="goodfellow.servicegateway.host" Target="mypinpad.common.primitives" Bounds="3883.29655766983,193.83996286563,1633.95910633031,252.46564093104" />
+    <Link Source="goodfellow.servicegateway.host" Target="mypinpad.services.hosting" Bounds="244.882476806641,181.901016235352,5249.68637084961,76.0443878173828" />
+    <Link Source="goodfellow.servicegateway.host" Target="ocelot" Bounds="5425.88377380173,193.83996286563,154.347489354336,95.2606581732326" />
+    <Link Source="goodfellow.services.infrastructure" Target="goodfellow.cryptographyservices.client" Bounds="2057.05517578125,235.094497680664,1646.15649414063,24.4648590087891" />
+    <Link Source="goodfellow.services.infrastructure" Target="goodfellow.esl" Bounds="3219.984375,243.627227783203,483.227294921875,89.3872680664063" />
+    <Link Source="goodfellow.services.infrastructure" Target="goodfellow.platform.support.sctl" Bounds="3272.52216549351,246.167325788636,430.689434506487,36.6827754979677" />
+    <Link Source="goodfellow.services.infrastructure" Target="goodfellow.schemas" Bounds="3606.35424804688,249.799896240234,202.37255859375,173.76171875" />
+    <Link Source="goodfellow.services.infrastructure" Target="goodfellow.sctl.protocol" Bounds="3213.625,243.627227783203,489.586669921875,141.250946044922" />
+    <Link Source="goodfellow.services.infrastructure" Target="mypinpad.cryptography.x25519" Bounds="2574.0869140625,245.122009277344,1129.12475585938,74.0693359375" />
+    <Link Source="goodfellow.services.infrastructure" Target="mypinpad.services.extensions" Bounds="3423.72045898438,248.402908325195,279.955322265625,85.3768768310547" />
+    <Link Source="goodfellow.softposservices" Target="goodfellow.dukptaes" Bounds="2743.88916015625,221.0771484375,981.357666015625,112.616241455078" />
+    <Link Source="goodfellow.softposservices" Target="goodfellow.events" Bounds="2767.13427734375,205.399124145508,1904.14501953125,101.485946655273" />
+    <Link Source="goodfellow.softposservices" Target="goodfellow.hsmservices.client" Bounds="1438.75756835938,221.0771484375,1177.83032226563,57.5737915039063" />
+    <Link Source="goodfellow.softposservices" Target="goodfellow.platform.servicekeyretriever" Bounds="2767.13430501302,216.148928982427,747.014052588832,64.8401669894746" />
+    <Link Source="goodfellow.softposservices" Target="goodfellow.softposservices.infrastructure" Bounds="2333.99072265625,221.0771484375,322.564697265625,86.6772766113281" />
+    <Link Source="goodfellow.softposservices" Target="goodfellow.softposservices.schemas" Bounds="2687.93286132813,221.0771484375,235.49951171875,148.792541503906" />
+    <Link Source="goodfellow.softposservices" Target="mypinpad.cryptography.x25519" Bounds="2510.29028320313,221.0771484375,142.1533203125,82.5084838867188" />
+    <Link Source="goodfellow.softposservices.data.entityframework" Target="goodfellow.softposservices.infrastructure" Bounds="1197.83081054688,247.449935913086,878.422119140625,58.5390167236328" />
+    <Link Source="goodfellow.softposservices.data.entityframework" Target="mypinpad.services.entityframework" Bounds="883.930203097503,250.437973777553,110.468541014334,27.8034293485205" />
+    <Link Source="goodfellow.softposservices.host" Target="goodfellow.events.publisher.azure" Bounds="2587.20092773438,-5.85246419906616,515.8115234375,223.938981533051" />
+    <Link Source="goodfellow.softposservices.host" Target="goodfellow.softposservices" Bounds="2556.50708007813,-5.85246419906616,182.1767578125,197.566712856293" />
+    <Link Source="goodfellow.softposservices.host" Target="goodfellow.softposservices.data.entityframework" Bounds="1071.68310546875,-5.85246419906616,1418.25463867188,225.135514736176" />
+    <Link Source="goodfellow.softposservices.host" Target="goodfellow.softposservices.webapi" Bounds="1162.37658691406,-5.85246419906616,1281.08972167969,284.680070400238" />
+    <Link Source="goodfellow.softposservices.host" Target="mypinpad.services.hosting" Bounds="229.114486694336,-15.0257568359375,2173.94044494629,244.570922851563" />
+    <Link Source="goodfellow.softposservices.schemas" Target="goodfellow.schemas" Bounds="3007.36059570313,399.140594482422,491.489013671875,40.4815979003906" />
+    <Link Source="goodfellow.softposservices.webapi" Target="goodfellow.platform.environment" Bounds="1197.48291015625,304.552185058594,355.069091796875,83.1931762695313" />
+    <Link Source="goodfellow.softposservices.webapi" Target="goodfellow.softposservices.infrastructure" Bounds="1197.32763671875,304.870361328125,859.973876953125,13.045166015625" />
+    <Link Source="goodfellow.softposservices.webapi" Target="mypinpad.common.primitives" Bounds="1164.318359375,290.725830078125,2522.13305664063,155.736450195313" />
+    <Link Source="goodfellow.terminalservices" Target="goodfellow.data.stores" Bounds="4604.95093725803,164.120344702593,149.673828438224,201.831087713452" />
+    <Link Source="goodfellow.terminalservices" Target="goodfellow.datacollection" Bounds="4633.15625017711,164.120344702593,258.670299572149,88.7509976882691" />
+    <Link Source="goodfellow.terminalservices" Target="goodfellow.events" Bounds="4607.19522478358,164.120344702593,123.709813384421,135.278393793368" />
+    <Link Source="goodfellow.terminalservices" Target="goodfellow.paymentgateway.infrastructure" Bounds="4685.83167508236,164.120344702593,407.501901762698,58.4419692417863" />
+    <Link Source="goodfellow.terminalservices" Target="goodfellow.platform.tokens" Bounds="2963.48852539063,163.89338684082,1538.43579101563,58.1558532714844" />
+    <Link Source="goodfellow.terminalservices" Target="goodfellow.services.infrastructure" Bounds="3930.92351404858,161.568532658457,569.178720277259,62.3326584690178" />
+    <Link Source="goodfellow.terminalservices" Target="goodfellow.terminalservices.infrastructure" Bounds="4351.17087373679,164.120344702593,199.018074068706,57.2323258593888" />
+    <Link Source="goodfellow.terminalservices" Target="goodfellow.terminalservices.policy" Bounds="4690.5819,158.548451173863,1966.98799390546,152.972563459026" />
+    <Link Source="goodfellow.terminalservices.host" Target="goodfellow.data.stores.entityframework" Bounds="3565.27687842998,81.9200728150826,120.55013596956,121.402437126582" />
+    <Link Source="goodfellow.terminalservices.host" Target="goodfellow.events.publisher.azure" Bounds="3178.4992953972,81.9200728150826,475.900735094339,139.390091410426" />
+    <Link Source="goodfellow.terminalservices.host" Target="goodfellow.hsmservices.client" Bounds="1390.26440429688,81.9196166992188,2236.1357421875,194.711547851563" />
+    <Link Source="goodfellow.terminalservices.host" Target="goodfellow.installationservices" Bounds="3807.62755547368,74.6329271559151,1921.34044759033,100.429197734693" />
+    <Link Source="goodfellow.terminalservices.host" Target="goodfellow.installationservices.webapi" Bounds="3807.62755547368,76.3647647944224,1399.72881845182,95.4218739799211" />
+    <Link Source="goodfellow.terminalservices.host" Target="goodfellow.paymentgateway.webapi.client" Bounds="3043.55316086348,76.5579485216995,546.251061276863,38.2077771534853" />
+    <Link Source="goodfellow.terminalservices.host" Target="goodfellow.platform.tokens.issuance" Bounds="2212.04272460938,81.9196166992188,1414.357421875,63.6901092529297" />
+    <Link Source="goodfellow.terminalservices.host" Target="goodfellow.terminalservices" Bounds="3807.62755144713,78.924988024134,683.478601148837,62.6606528101826" />
+    <Link Source="goodfellow.terminalservices.host" Target="goodfellow.terminalservices.webapi" Bounds="3807.62755547368,73.4142862472585,1126.83546272403,46.2916647727236" />
+    <Link Source="goodfellow.terminalservices.host" Target="mypinpad.services.hosting" Bounds="244.780807495117,81.9196166992188,3381.61933898926,150.612976074219" />
+    <Link Source="goodfellow.terminalservices.infrastructure" Target="goodfellow.readerservices.infrastructure" Bounds="4429.43846666667,242.52480103738,1026.19898655616,44.3323587553468" />
+    <Link Source="goodfellow.terminalservices.infrastructure" Target="mypinpad.services.common" Bounds="3767.17993164063,249.800140380859,515.500244140625,251.883422851563" />
+    <Link Source="goodfellow.terminalservices.policy" Target="goodfellow.data" Bounds="5483.50173359342,332.298101850908,1183.39053386325,120.8983309811" />
+    <Link Source="goodfellow.terminalservices.policy" Target="goodfellow.policy" Bounds="6684.53876383683,333.892869757351,68.5145631897585,35.1771732945585" />
+    <Link Source="goodfellow.terminalservices.webapi" Target="goodfellow.data.stores" Bounds="4790.78303885156,137.880004920709,255.642346613165,229.291259922972" />
+    <Link Source="goodfellow.terminalservices.webapi" Target="goodfellow.platform.tokens" Bounds="2963.48852539063,137.879791259766,2003.91772460938,84.1694488525391" />
+    <Link Source="goodfellow.terminalservices.webapi" Target="goodfellow.terminalservices.infrastructure" Bounds="4394.83878775015,137.880004920709,577.509495412765,84.6546969029411" />
+    <Link Source="goodfellow.transactionprocessingservices.host" Target="goodfellow.data.stores.entityframework" Bounds="3682.20901935643,165.722836997178,2289.61014731024,53.7684181849377" />
+    <Link Source="goodfellow.transactionprocessingservices.host" Target="goodfellow.transactionprocessingservices.processor.terminalhost" Bounds="6261.5725,168.108915275178,1052.71424130397,42.0594894568337" />
+    <Link Source="goodfellow.transactionprocessingservices.host" Target="goodfellow.transactionprocessingservices.processor.virtual" Bounds="6261.5725,170.427952192813,669.541025679085,37.4677505748701" />
+    <Link Source="goodfellow.transactionprocessingservices.host" Target="goodfellow.transactionprocessingservices.terminalhost.client" Bounds="5672.654646858,175.300603124428,416.205064526532,194.076665833381" />
+    <Link Source="goodfellow.transactionprocessingservices.host" Target="goodfellow.transactionprocessingservices.webapi" Bounds="6197.00956753041,175.300603124428,465.52468476176,75.2363274926336" />
+    <Link Source="goodfellow.transactionprocessingservices.host" Target="mypinpad.services.hosting" Bounds="244.882476806641,156.070388793945,5726.93685913086,101.875015258789" />
+    <Link Source="goodfellow.transactionprocessingservices.processor" Target="goodfellow.data.stores" Bounds="4860.28332034189,287.220597434476,916.519983545496,90.0329342169806" />
+    <Link Source="goodfellow.transactionprocessingservices.processor" Target="goodfellow.transactionprocessingservices.infrastructure" Bounds="5911.71608297678,287.220597434476,28.4964343240463,133.119550727077" />
+    <Link Source="goodfellow.transactionprocessingservices.processor" Target="mypinpad.emv" Bounds="4374.90631169336,279.764060412354,1375.94285497331,48.0741953493533" />
+    <Link Source="goodfellow.transactionprocessingservices.processor" Target="mypinpad.services.common" Bounds="3803.55900737032,287.220446264648,1987.09151935043,218.04977510312" />
+    <Link Source="goodfellow.transactionprocessingservices.processor.terminalhost" Target="goodfellow.readertranslation.webapi.client" Bounds="6473.23955484456,231.260651377454,955.853230443912,140.610012484297" />
+    <Link Source="goodfellow.transactionprocessingservices.processor.terminalhost" Target="goodfellow.transactionprocessingservices.processor" Bounds="6076.02039094946,225.032131789112,1247.25917571721,43.3952377898204" />
+    <Link Source="goodfellow.transactionprocessingservices.processor.virtual" Target="goodfellow.readertranslation.webapi.client" Bounds="6442.13630376537,231.260597498469,617.292770090743,139.930233840461" />
+    <Link Source="goodfellow.transactionprocessingservices.processor.virtual" Target="goodfellow.transactionprocessingservices.processor" Bounds="6076.01618807567,226.462721528433,864.083278590997,40.0364491627466" />
+    <Link Source="goodfellow.transactionprocessingservices.terminalhost.client" Target="goodfellow.transactionprocessingservices.infrastructure" Bounds="5708.15226048869,399.140785936017,156.377001760312,28.392201688615" />
+    <Link Source="goodfellow.transactionprocessingservices.terminalhost.client" Target="mypinpad.services.common" Bounds="3803.61761366493,398.460294541485,1650.47005786018,111.18804125122" />
+    <Link Source="goodfellow.transactionprocessingservices.webapi" Target="goodfellow.transactionprocessingservices.webapi.common" Bounds="6115.73399991234,277.932844354083,558.657402668894,93.7580986605917" />
+    <Link Source="goodfellow.transactionprocessingservices.webapi.client" Target="goodfellow.transactionprocessingservices.webapi.common" Bounds="6082.40386734839,190.676454283098,613.549599452138,179.970889292167" />
+    <Link Source="goodfellow.transactionprocessingservices.webapi.common" Target="goodfellow.transactionprocessingservices.infrastructure" Bounds="5972.0152747139,399.140558252861,37.8688434975256,25.0366595023611" />
+    <Link Source="goodfellow.transactionprocessingservices.webapi.common" Target="mypinpad.services.common" Bounds="3803.60473632813,364.731018066406,2074.97778320313,142.968566894531" />
+    <Link Source="goodfellow.virtualreader" Target="goodfellow.dukptaes" Bounds="3817.39111328125,193.840042114258,227.006103515625,137.195388793945" />
+    <Link Source="goodfellow.virtualreader" Target="goodfellow.esl.libesl" Bounds="2285.00830078125,184.221481323242,1738.60009765625,66.9314727783203" />
+    <Link Source="goodfellow.virtualreader" Target="goodfellow.virtualreader.infrastructure" Bounds="2554.04541015625,184.136688232422,1469.56298828125,65.9181365966797" />
+    <Link Source="goodfellow.virtualreader" Target="mypinpad.emv" Bounds="4127.99552373482,193.840015297914,155.067138387933,117.932438790923" />
+    <Link Source="goodfellow.virtualreader.host" Target="goodfellow.esl.managed" Bounds="1915.18408203125,133.661239624023,1149.39111328125,47.7367706298828" />
+    <Link Source="goodfellow.virtualreader.host" Target="goodfellow.virtualreader" Bounds="3266.52519605785,130.877064581188,748.098896567868,44.2823897160745" />
+    <Link Source="goodfellow.virtualreader.host" Target="mypinpad.services.hosting" Bounds="244.780807495117,133.659332275391,2819.79438781738,98.8732604980469" />
+    <Link Source="goodfellow.zaffreservices" Target="goodfellow.esl" Bounds="1637.33911132813,291.820648193359,1465.61767578125,52.0875854492188" />
+    <Link Source="goodfellow.zaffreservices" Target="goodfellow.layerondemand" Bounds="474.452575683594,303.412414550781,1002.16998291016,41.0225830078125" />
+    <Link Source="goodfellow.zaffreservices" Target="goodfellow.zaffreservices.infrastructure" Bounds="1407.82060587437,303.412418823242,97.3571871181825,28.7947131163738" />
+    <Link Source="goodfellow.zaffreservices" Target="mypinpad.cryptography.drbg.services" Bounds="1191.54235530386,301.496260096997,269.317799072193,33.7817795911541" />
+    <Link Source="goodfellow.zaffreservices" Target="mypinpad.cryptography.x25519" Bounds="1604.40075683594,299.169372558594,782.467651367188,12.1109924316406" />
+    <Link Source="goodfellow.zaffreservices" Target="mypinpad.services.common" Bounds="1609.86572265625,303.412414550781,1988.2138671875,199.499420166016" />
+    <Link Source="goodfellow.zaffreservices.data.entityframework" Target="goodfellow.zaffreservices.infrastructure" Bounds="862.590454101563,250.047729492188,429.580322265625,82.6205444335938" />
+    <Link Source="goodfellow.zaffreservices.data.entityframework" Target="mypinpad.services.entityframework" Bounds="741.431558509952,250.437973777553,49.3991609839678,25.8298529755064" />
+    <Link Source="goodfellow.zaffreservices.host" Target="goodfellow.hsmservices.client" Bounds="1368.89172363281,53.1968612670898,273.928100585938,222.157752990723" />
+    <Link Source="goodfellow.zaffreservices.host" Target="goodfellow.platform.environment" Bounds="1634.78393554688,53.1968612670898,86.436767578125,335.809364318848" />
+    <Link Source="goodfellow.zaffreservices.host" Target="goodfellow.platform.tokens" Bounds="1702.68334960938,53.1968612670898,1151.55493164063,166.907081604004" />
+    <Link Source="goodfellow.zaffreservices.host" Target="goodfellow.zaffreservices" Bounds="1563.95751953125,53.1968612670898,81.313232421875,217.007026672363" />
+    <Link Source="goodfellow.zaffreservices.host" Target="goodfellow.zaffreservices.data.entityframework" Bounds="792.871459960938,53.1968612670898,756.280395507813,169.579795837402" />
+    <Link Source="goodfellow.zaffreservices.host" Target="goodfellow.zaffreservices.webapi" Bounds="1710.5322265625,53.1968612670898,1174.54736328125,220.870460510254" />
+    <Link Source="goodfellow.zaffreservices.host" Target="mypinpad.services.hosting" Bounds="223.732879638672,48.903938293457,1307.86502075195,180.527305603027" />
+    <Link Source="goodfellow.zaffreservices.webapi" Target="goodfellow.platform.appcontext" Bounds="2941.77880859375,305.760131835938,923.67529296875,93.5032348632813" />
+    <Link Source="goodfellow.zaffreservices.webapi" Target="goodfellow.zaffreservices.infrastructure" Bounds="1487.36645507813,294.060150146484,1309.76806640625,39.9080505371094" />
+    <Link Source="goodfellow.zaffreservices.webapi" Target="mypinpad.services.common" Bounds="2943.0263671875,305.760131835938,705.775634765625,195.263366699219" />
+    <Link Source="goodfellow.zaffreservices.webapi.client" Target="mypinpad.services.common" Bounds="3790.162109375,346.64697265625,706.7783203125,155.571960449219" />
+    <Link Source="mypinpad.appleservices" Target="mypinpad.cryptography.jsonwebsignature" Bounds="1107.4487851878,136.879318695068,157.866872963653,29.9604605659627" />
+    <Link Source="mypinpad.cryptography.drbg.services" Target="mypinpad.cryptography.drbg" Bounds="1152.34399414063,362.358184814453,1306.55200195313,157.332366943359" />
+    <Link Source="mypinpad.cryptography.drbg.services" Target="mypinpad.services.extensions.providermodel" Bounds="1104.5830078125,362.358184814453,428.257568359375,140.352905273438" />
+    <Link Source="mypinpad.cryptography.ecies" Target="mypinpad.cryptography.drbg" Bounds="2593.859375,305.21533203125,700.971435546875,209.892395019531" />
+    <Link Source="mypinpad.cryptography.ecies" Target="mypinpad.cryptography.x25519" Bounds="2574.08447265625,296.647888183594,719.47021484375,20.6292419433594" />
+    <Link Source="mypinpad.emv" Target="mypinpad.common.primitives" Bounds="3808.67431640625,337.000152587891,440.0009765625,104.105285644531" />
+    <Link Source="mypinpad.googleservices" Target="mypinpad.cryptography.jsonwebsignature" Bounds="1120.05505371094,109.156959533691,609.91796875,57.9361038208008" />
+    <Link Source="mypinpad.payshield.communication" Target="mypinpad.services.common" Bounds="2478.7509765625,221.0771484375,1173.55639648438,279.738891601563" />
+    <Link Source="mypinpad.payshieldgateway.common" Target="mypinpad.aspnetcore.authentication.bearertoken" Bounds="4828.90513993576,220.080344702593,177.662181338116,110.913502084359" />
+    <Link Source="mypinpad.payshieldgateway.common" Target="mypinpad.common.primitives" Bounds="3808.67431640625,220.080291748047,964.77685546875,221.025146484375" />
+    <Link Source="mypinpad.payshieldgateway.host" Target="mypinpad.payshield.communication" Bounds="2531.8330078125,77.9833297729492,809.7646484375,115.812721252441" />
+    <Link Source="mypinpad.payshieldgateway.host" Target="mypinpad.payshieldgateway.common" Bounds="3559.59393340369,80.0233829194148,1119.36193186375,113.931009376391" />
+    <Link Source="mypinpad.payshieldgateway.host" Target="mypinpad.services.hosting" Bounds="244.780807495117,77.8129196166992,3096.81684875488,154.719673156738" />
+    <Link Source="mypinpad.payshieldgateway.host" Target="polly" Bounds="3365.39705832773,81.9200182607787,57.0725021270805,26.2404066469095" />
+    <Link Source="mypinpad.payshieldhsmclient" Target="mypinpad.common.primitives" Bounds="1937.21653483073,405.3372262974,1745.2979807306,52.1025117378765" />
+    <Link Source="mypinpad.payshieldhsmclient" Target="mypinpad.services.common" Bounds="1937.21653483073,408.485100932912,1659.41164921762,101.786930326218" />
+    <Link Source="mypinpad.payshieldhsmclient" Target="mypinpad.services.extensions.providermodel" Bounds="1725.87072753906,415.332611083984,104.489868164063,86.0570373535156" />
+    <Link Source="mypinpad.services.abstractions" Target="mypinpad.services.common" Bounds="1556.06176757813,471.299652099609,2040.55126953125,43.3450012207031" />
+    <Link Source="mypinpad.services.azure" Target="mypinpad.services.abstractions" Bounds="1565.52282714844,350.408660888672,1015.84533691406,98.6875305175781" />
+    <Link Source="mypinpad.services.entityframework" Target="mypinpad.services.common" Bounds="893.443786621094,306.398071289063,2704.63580322266,196.513763427734" />
+    <Link Source="mypinpad.services.extensions" Target="mypinpad.services.abstractions" Bounds="1565.50512695313,325.626037597656,1725.75366210938,122.880187988281" />
+    <Link Source="mypinpad.services.hosting" Target="mypinpad.services.logging" Bounds="-234.878511700764,257.037266235352,330.405057890489,86.4922266361397" />
+    <Link Source="mypinpad.services.logging" Target="mypinpad.services.azure" Bounds="-201.447525024414,320.443420410156,2770.73243713379,105.408142089844" />
+    <Link Source="mypinpad.services.logging" Target="serilog.aspnetcore" Bounds="-295.04424594486,371.768681030273,1.3989027699385,38.1550211881278" />
+    <Link Source="mypinpad.services.logging" Target="serilog.settings.configuration" Bounds="-272.469330928387,371.768681030273,173.183863519308,108.594866788551" />
+    <Link Source="mypinpad.services.logging" Target="serilog.sinks.console" Bounds="-487.569481969462,371.768681030273,173.379031549904,107.057688109812" />
+    <Link Source="mypinpad.services.logging" Target="serilog.sinks.periodicbatching" Bounds="-201.447525024414,320.758728027344,1816.78712463379,125.053955078125" />
+    <Link Source="ocelot" Target="fluentvalidation" Bounds="5170.49756778633,319.609192883732,191.24259494068,69.0541400386656" />
+    <Link Source="serilog.aspnetcore" Target="serilog.extensions.hosting" Bounds="-294.474708785159,444.877659301758,2.96758595791471,28.0102860250004" />
+    <Link Source="serilog.extensions.hosting" Target="serilog.extensions.logging" Bounds="-290.989692294286,507.797855834961,1.31313342270727,34.5849780883682" />
+    <Link Source="serilog.extensions.logging" Target="serilog" Bounds="-291.626416773354,577.336353759766,0.570981184678203,37.5118676166112" />
+    <Link Source="serilog.settings.configuration" Target="serilog" Bounds="-262.544472584964,511.104771118164,171.018526890032,107.938790651669" />
+    <Link Source="serilog.sinks.console" Target="serilog" Bounds="-495.382204433302,509.514866333008,176.153223538012,109.578470721227" />
+    <Link Source="serilog.sinks.periodicbatching" Target="serilog" Bounds="-243.389776064665,469.458965429244,1829.95264959982,163.148434117721" />
+    <Link Source="swashbuckle.aspnetcore.swaggergen" Target="swashbuckle.aspnetcore.swagger" Bounds="7641.97703913804,276.040347334633,151.719352009369,28.3470790673684" />
+  </Links>
+  <Categories>
+    <Category Id="EntryPoint" Label="Entry point for analysis" />
+    <Category Id="Normal" Label="Normal reference" />
+    <Category Id="UnusedAssembly" Label="Unused assemblies" />
+    <Category Id="VersionsConflicted" Label="Versions conflict" />
+  </Categories>
+  <Properties>
+    <Property Id="Bounds" DataType="System.Windows.Rect" />
+    <Property Id="Expression" DataType="System.String" />
+    <Property Id="GraphDirection" DataType="Microsoft.VisualStudio.Diagrams.Layout.LayoutOrientation" />
+    <Property Id="GroupLabel" DataType="System.String" />
+    <Property Id="Icon" Label="Icon" Description="Icon" DataType="System.String" />
+    <Property Id="IsEnabled" DataType="System.Boolean" />
+    <Property Id="Label" Label="Label" Description="Displayable label of an Annotatable object" DataType="System.String" />
+    <Property Id="ProcessorArchitecture" Label="Platform Target (Processor Architecture)" DataType="System.String" />
+    <Property Id="TargetType" DataType="System.Type" />
+    <Property Id="UseManualLocation" DataType="System.Boolean" />
+    <Property Id="Value" DataType="System.String" />
+    <Property Id="xsd" DataType="System.String" />
+    <Property Id="xsi" DataType="System.String" />
+  </Properties>
+  <Styles>
+    <Style TargetType="Node" GroupLabel="Entry point for analysis">
+      <Condition Expression="HasCategory('EntryPoint')" />
+      <Setter Property="Background" Value="LightGreen" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Normal reference">
+      <Condition Expression="HasCategory('Normal')" />
+      <Setter Property="Background" Value="MintCream" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Versions conflict">
+      <Condition Expression="HasCategory('VersionsConflicted')" />
+      <Setter Property="Background" Value="LightSalmon" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Other conflict">
+      <Condition Expression="HasCategory('OtherConflict')" />
+      <Setter Property="Background" Value="Coral" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Versions conflict is resolved by config file">
+      <Condition Expression="HasCategory('VersionsConflictResolved')" />
+      <Setter Property="Background" Value="Khaki" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Assembly is missed or failed to load">
+      <Condition Expression="HasCategory('Missed')" />
+      <Setter Property="Background" Value="Crimson" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Detailed information">
+      <Condition Expression="HasCategory('Comment')" />
+      <Setter Property="Background" Value="White" />
+      <Setter Property="MaxWidth" Value="300" />
+      <Setter Property="NodeRadius" Value="15" />
+      <Setter Property="Foreground" Value="Gray" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Unused assemblies">
+      <Condition Expression="HasCategory('UnusedAssembly')" />
+      <Setter Property="Background" Value="Gray" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Link to conflicted reference">
+      <Condition Expression="Target.HasCategory('VersionsConflicted')" />
+      <Setter Property="Stroke" Value="LightSalmon" />
+      <Setter Property="StrokeThickness" Value="3" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Link to missed reference">
+      <Condition Expression="Target.HasCategory('Missed')" />
+      <Setter Property="Stroke" Value="Crimson" />
+      <Setter Property="StrokeThickness" Value="3" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Link to detailed information">
+      <Condition Expression="Target.HasCategory('Comment')" />
+      <Setter Property="StrokeDashArray" Value="2 2" />
+    </Style>
+  </Styles>
+</DirectedGraph>
