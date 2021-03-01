@@ -1,6 +1,10 @@
-﻿using GravityLayout.Logic.Physics;
+﻿using Dgml;
+using GravityLayout.Logic.Geometry;
+using GravityLayout.Logic.Physics;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
 
 namespace GravityLayout.Logic
 {
@@ -19,15 +23,77 @@ namespace GravityLayout.Logic
         /// Graph may not be fully connected. Connected sub-graphs are layed out individually and placed
         /// one below another.
         /// </summary>
-        /// <param name="diGraph"></param>
+        /// <param name="graph"></param>
         /// <returns>A new graph laid out such that edges cross as little as possible.</returns>
-        public Dgml.DirectedGraph Layout(Dgml.DirectedGraph diGraph)
+        public DirectedGraph Layout(DirectedGraph graph)
         {
-            // TODO: Split to a set of fully connected sub-graphs
-            // TODO: Layout individual fully connected graphs
-            // TODO: Place them one under another
+            // Split to a set of fully connected sub-graphs
+            var connectedSubGraphs = GraphManipulator.SplitToConnectedSubGraphs(graph).ToList();
 
-            throw new NotImplementedException();
+            // Layout individual fully connected graphs
+            var layoutedSubGraphs = new List<DirectedGraph>();
+            foreach (var subGraph in connectedSubGraphs)
+                layoutedSubGraphs.Add(LayoutFullyConnected(subGraph));
+
+            // Place them one under another
+            Stack(connectedSubGraphs.ToList());
+
+            // Merge them
+            return Merge(connectedSubGraphs);
+        }
+
+
+        /// <summary>
+        /// Graphically stacks a set of graphs by shifting their nodes such,
+        /// that they are position in a stacked fashion, starting with first on top,
+        /// and subsequent ones below each other.
+        /// </summary>
+        /// <param name="graphs"></param>
+        private void Stack(List<DirectedGraph> graphs)
+        {
+            if (graphs is null || graphs.Count == 0)
+                return;
+
+            float gap = 20;
+            float currentBottom = graphs[0].GetBoundingRect()?.Bottom ?? 0f;
+
+            for (int i = 1; i < graphs.Count; i++)
+            {
+                RectangleF? graphIRect = graphs[i].GetBoundingRect();
+                float shiftY = graphIRect is null
+                    ? currentBottom
+                    : ((RectangleF)graphIRect).Top - currentBottom - gap;
+                ShiftGraph(graphs[i], shiftY);
+            }
+        }
+
+        /// <summary>
+        /// Merges a set of graphs by taking meta info from the first, and merging
+        /// node and link collections.
+        /// </summary>
+        private DirectedGraph Merge(List<DirectedGraph> graphs)
+        {
+            if (graphs == null || graphs.Count == 0)
+                return null;
+
+            var merged = GraphManipulator.Copy(graphs[0]);
+            for (int i = 1; i < graphs.Count; i++)
+            {
+                merged.Nodes = merged.Nodes.Union(graphs[i].Nodes).ToArray();
+                merged.Links = merged.Links.Union(graphs[i].Links).ToArray();
+            }
+
+            return merged;
+        }
+
+        private void ShiftGraph(DirectedGraph graph, float dy)
+        {
+            foreach (var node in graph.Nodes)
+            {
+                RectangleF nodeRect = node.GetBoundingRect() ?? new RectangleF(0,0,0,0);
+                nodeRect.Y += dy;
+                node.SetBoundingRect(nodeRect);
+            }
         }
 
         /// <summary>
@@ -35,9 +101,9 @@ namespace GravityLayout.Logic
         /// </summary>
         /// <param name="diGraph"></param>
         /// <returns></returns>
-        private Dgml.DirectedGraph LayoutFullyConnected(Dgml.DirectedGraph diGraph)
+        private DirectedGraph LayoutFullyConnected(DirectedGraph diGraph)
         {
-            // TODO: Use SpringLayouting to arrange the graph.
+            // TODO: Use AntiGravityLayouting to arrange the graph.
 
             throw new NotImplementedException();
         }
@@ -52,40 +118,46 @@ namespace GravityLayout.Logic
         /// </param>
         /// <param name="antiGravitationalConstant"></param>
         /// <returns>Dictionary of resultant forces by node id.</returns>
-        private Dictionary<string, Force> CalculateNodeForces(
-            Dgml.DirectedGraph diGraph,
+        private Dictionary<DirectedGraphNode, Force> CalculateNodeForces(
+            DirectedGraph graph,
             double edgeSpringLength,
             double edgeSpringStiffness,
             Spring.Characteristics edgeSprintCharacteristics,
             double antiGravitationalConstant)
         {
-            var ret = new Dictionary<string, Force>();
+            var ret = new Dictionary<DirectedGraphNode, Force>();
 
-            if (diGraph.Nodes is null)
+            if (graph.Nodes is null)
                 return ret;
 
-            // TODO: Calculate spring forces by node
-            // TODO: Calculate anti-gravity forces by node
-            // TODO: Aggregate them
-            throw new NotImplementedException();
+            var nodeForces = CalculateSpringForces(graph, edgeSpringLength, edgeSpringStiffness, edgeSprintCharacteristics);
+            foreach (var nodeForce in CalculateAntiGravitationalForces(graph, antiGravitationalConstant))
+            {
+                if (!ret.ContainsKey(nodeForce.Key))
+                    ret.Add(nodeForce.Key, nodeForce.Value);
+                else
+                    ret[nodeForce.Key] += nodeForce.Value;
+            }
+
+            return nodeForces;
         }
 
-        private Dictionary<Dgml.DirectedGraphNode, Force> CalculateAntiGravitationalForcesByNode(
-            Dgml.DirectedGraph graph,
+        private Dictionary<DirectedGraphNode, Force> CalculateAntiGravitationalForces(
+            DirectedGraph graph,
             double antiGravitationalConstant)
         {
-            var ret = new Dictionary<Dgml.DirectedGraphNode, Force>();
+            var ret = new Dictionary<DirectedGraphNode, Force>();
             AntiGravity antiGravity = new AntiGravity(antiGravitationalConstant);
 
             // Consider each node-pair exactly once
             for (int a = 0; a < graph.Nodes.Length - 1; a++)
             {
-                Dgml.DirectedGraphNode nodeA = graph.Nodes[a];
+                DirectedGraphNode nodeA = graph.Nodes[a];
                 double massA = GetMass(nodeA);
 
                 for (int b = a + 1; b < graph.Nodes.Length; b++)
                 {
-                    Dgml.DirectedGraphNode nodeB = graph.Nodes[b];
+                    DirectedGraphNode nodeB = graph.Nodes[b];
                     double massB = GetMass(nodeB);
                 }
             }
@@ -93,7 +165,49 @@ namespace GravityLayout.Logic
             return ret;
         }
 
-        private double GetMass(Dgml.DirectedGraphNode node) =>
+        private Dictionary<DirectedGraphNode, Force> CalculateSpringForces(
+            DirectedGraph graph,
+            double edgeSpringLength,
+            double edgeSpringStiffness,
+            Spring.Characteristics edgeSprintCharacteristics)
+        {
+            var ret = new Dictionary<DirectedGraphNode, Force>();
+            Spring spring = new Spring(edgeSpringLength, edgeSpringStiffness, edgeSprintCharacteristics);
+
+            foreach (var link in graph.Links)
+            {
+                var nodeA = graph.Nodes.First(node => node.Id == link.Source);
+                var nodeB = graph.Nodes.First(node => node.Id == link.Target);
+                RectangleF? boundsA = nodeA.GetBoundingRect();
+                RectangleF? boundsB = nodeB.GetBoundingRect();
+                Position pA = GetCenter(boundsA);
+                Position pB = GetCenter(boundsB);
+                (Force fA, Force fB) = spring.CalculateForces(pA, pB);
+
+                if (!ret.ContainsKey(nodeA))
+                    ret.Add(nodeA, fA);
+                else
+                    ret[nodeA] += fA;
+
+                if (!ret.ContainsKey(nodeB))
+                    ret.Add(nodeB, fB);
+                else
+                    ret[nodeB] += fB;
+            }
+
+            return ret;
+        }
+
+        private Position GetCenter(RectangleF? rect)
+        {
+            if (rect is null)
+                return new Position(0, 0);
+
+            RectangleF r = (RectangleF)rect;
+            return new Position((r.Top + r.Bottom) / 2.0, (r.Left + r.Right) / 2.0);
+        }
+
+        private double GetMass(DirectedGraphNode node) =>
             string.IsNullOrWhiteSpace(node.Label) ? 1 : node.Label.Length;
     }
 }

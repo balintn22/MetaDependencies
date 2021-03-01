@@ -32,6 +32,8 @@ namespace GravityLayout.Logic.Physics
 
         public static explicit operator Force(Vector vector) => ForceUsingRad(vector.Length, vector.FiRad);
 
+        public static Force operator +(Force f1, Force f2) => (Force)(f1.Vector + f2.Vector);
+
         public static Force Sum(IEnumerable<Force> forces)
         {
             if (forces is null)

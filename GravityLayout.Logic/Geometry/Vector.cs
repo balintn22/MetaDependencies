@@ -175,7 +175,16 @@ namespace GravityLayout.Logic.Geometry
         public static Vector operator -(Vector v1, Vector v2) =>
             FromXY(v1.X - v2.X, v1.Y - v2.Y);
 
-        public Vector Reverse() => FromPolar(Length, FiRad + Math.PI);
+        public static Vector operator *(Vector v, double m) =>
+            FromPolar(v.Length * m, v.FiRad);
+
+        public Vector Reverse()
+        {
+            if (Length < 0)
+                return FromPolar(-Length, FiRad);
+            else
+                return FromPolar(Length, FiRad + Math.PI);
+        }
 
         public static Vector Sum(IEnumerable<Vector> vectors)
         {
