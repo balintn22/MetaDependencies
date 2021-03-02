@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Geometry\VectorTests.cs" />
+    <Compile Include="GravityPhysicsTests.cs" />
     <Compile Include="Physics\AntiGravityTests.cs" />
     <Compile Include="Physics\PhysicsTestHelper.cs" />
     <Compile Include="Physics\RopeTests.cs" />
@@ -65,6 +66,10 @@
     <Compile Include="GravityLayouterTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="FullyConnectedAsQuickClusters.dgml" />
+    <None Include="FullyConnectedDgmlWithBounds.dgml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="DgmlWithBounds.dgml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

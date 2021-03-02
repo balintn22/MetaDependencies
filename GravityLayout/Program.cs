@@ -47,7 +47,7 @@ namespace GravityLayout
         private static void PrintIterationInfo(IterationResult iResult)
         {
             var bounds = iResult.Graph.GetBoundingRect();
-            Console.WriteLine($"{iResult.Count}.\tMaxShift: {iResult.MaxShift}\tBounds: ({bounds?.Width} x {bounds?.Height})");
+            Console.WriteLine($"{iResult.Count}.\tMaxShift: {iResult.MaxShift}\tBounds: ({bounds.Width} x {bounds.Height})");
         }
 
         private static void ShowUsage()

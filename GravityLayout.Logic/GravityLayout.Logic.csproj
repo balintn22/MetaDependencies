@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Geometry\Position.cs" />
     <Compile Include="Geometry\Vector.cs" />
+    <Compile Include="GraphPhysics.cs" />
     <Compile Include="GravityLayouter.cs" />
     <Compile Include="IterationResult.cs" />
     <Compile Include="Physics\AntiGravity.cs" />

@@ -18,10 +18,9 @@ namespace GravityLayout.Logic
     /// </summary>
     public class GravityLayouter
     {
-        private double _ropeLength;
-        private double _ropeStrength;
-        private Rope.Characteristics _ropeCharacteristics;
-        private double _antiGravitationalConstant;
+        private GraphPhysics _physics;
+        /// <summary>Used to slow shifts down, regardless of large forces.</summary>
+        private const double _maxNodeShift = 500;
 
         public GravityLayouter(
             double ropeLength,
@@ -29,10 +28,11 @@ namespace GravityLayout.Logic
             Rope.Characteristics ropeCharacteristics,
             double antiGravitationalConstant)
         {
-            _ropeLength = ropeLength;
-            _ropeStrength = ropeStrength;
-            _ropeCharacteristics = ropeCharacteristics;
-            _antiGravitationalConstant = antiGravitationalConstant;
+            _physics = new GraphPhysics(
+                ropeLength,
+                ropeStrength,
+                ropeCharacteristics,
+                antiGravitationalConstant);
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace GravityLayout.Logic
                 return;
 
             float gap = 20;
-            float currentBottom = graphs[0].GetBoundingRect()?.Bottom ?? 0f;
+            float currentBottom = graphs[0].GetBoundingRect().Bottom;
 
             for (int i = 1; i < graphs.Count; i++)
             {
@@ -104,11 +104,7 @@ namespace GravityLayout.Logic
         private void ShiftGraph(DirectedGraph graph, float dy)
         {
             foreach (var node in graph.Nodes)
-            {
-                RectangleF nodeRect = node.GetBoundingRect() ?? new RectangleF(0,0,0,0);
-                nodeRect.Y += dy;
-                node.SetBoundingRect(nodeRect);
-            }
+                node.Shift(0, dy);
         }
 
         /// <summary>
@@ -168,7 +164,7 @@ namespace GravityLayout.Logic
         private IterationResult FullyConnectedGraphIterationStep(DirectedGraph graph)
         {
             var ret = new IterationResult();
-            var nodeForces = NodeForces(graph);
+            var nodeForces = _physics.NodeForces(graph);
             foreach (var node in graph.Nodes)
             {
                 if (nodeForces.ContainsKey(node))
@@ -176,6 +172,7 @@ namespace GravityLayout.Logic
                     Force nodeForce = nodeForces[node];
                     Vector shift = (Vector)nodeForce;  // TODO: Any multipliers to represent running longer then a second?
                     // TEST: Limit node shift
+                    shift.Length = Math.Min(_maxNodeShift, shift.Length);
                     node.Shift(shift.X, shift.Y);
 
                     ret.MaxShift = Math.Max(ret.MaxShift, shift.Length);
@@ -185,90 +182,5 @@ namespace GravityLayout.Logic
             ret.Graph = graph;
             return ret;
         }
-
-        /// <summary>
-        /// Calculates the resultant forces at each node.
-        /// </summary>
-        /// <returns>Dictionary of resultant forces by node id.</returns>
-        private Dictionary<DirectedGraphNode, Force> NodeForces(
-            DirectedGraph graph)
-        {
-            var ret = new Dictionary<DirectedGraphNode, Force>();
-
-            if (graph.Nodes is null)
-                return ret;
-
-            IEnumerable<(DirectedGraphNode, Force)> ropeForces = RopeForces(graph);
-            IEnumerable<(DirectedGraphNode, Force)> agForces = AntiGravitationalForces(graph);
-            var sumRopeForces = Force.Sum(ropeForces.Select(x => x.Item2)).Magnitude;
-            var sumAgForces = Force.Sum(agForces.Select(x => x.Item2)).Magnitude;
-            foreach (var nodeForce in ropeForces.Union(agForces))
-            {
-                var node = nodeForce.Item1;
-                var force = nodeForce.Item2;
-                if (!ret.ContainsKey(node))
-                    ret.Add(node, force);
-                else
-                    ret[node] += force;
-            }
-
-            return ret;
-        }
-
-        private IEnumerable<(DirectedGraphNode, Force)> AntiGravitationalForces(DirectedGraph graph)
-        {
-            var ret = new Dictionary<DirectedGraphNode, Force>();
-            AntiGravity antiGravity = new AntiGravity(_antiGravitationalConstant);
-
-            // Consider each node-pair exactly once
-            for (int a = 0; a < graph.Nodes.Length - 1; a++)
-            {
-                DirectedGraphNode nodeA = graph.Nodes[a];
-                double massA = GetMass(nodeA);
-                Position pA = GetCenter(nodeA.GetBoundingRect());
-
-                for (int b = a + 1; b < graph.Nodes.Length; b++)
-                {
-                    DirectedGraphNode nodeB = graph.Nodes[b];
-                    double massB = GetMass(nodeB);
-                    Position pB = GetCenter(nodeB.GetBoundingRect());
-                    (Force fA, Force fB) = antiGravity.CalculateForces(massA, massB, pA, pB);
-                    yield return (nodeA, fA);
-                    yield return (nodeB, fB);
-                }
-            }
-        }
-
-        private IEnumerable<(DirectedGraphNode, Force)> RopeForces(DirectedGraph graph)
-        {
-            var ret = new Dictionary<DirectedGraphNode, Force>();
-            var rope = new Rope(_ropeLength, _ropeStrength, _ropeCharacteristics);
-
-            foreach (var link in graph.Links)
-            {
-                var nodeA = graph.Nodes.First(node => node.Id == link.Source);
-                var nodeB = graph.Nodes.First(node => node.Id == link.Target);
-                RectangleF? boundsA = nodeA.GetBoundingRect();
-                RectangleF? boundsB = nodeB.GetBoundingRect();
-                Position pA = GetCenter(boundsA);
-                Position pB = GetCenter(boundsB);
-                (Force fA, Force fB) = rope.CalculateForces(pA, pB);
-                link.Label = fA.Magnitude.ToString();   // Debug: display rope force on link
-                yield return (nodeA, fA);
-                yield return (nodeB, fB);
-            }
-        }
-
-        private Position GetCenter(RectangleF? rect)
-        {
-            if (rect is null)
-                return new Position(0, 0);
-
-            RectangleF r = (RectangleF)rect;
-            return new Position((r.Left + r.Right) / 2.0, (r.Top + r.Bottom) / 2.0);
-        }
-
-        private double GetMass(DirectedGraphNode node) =>
-            string.IsNullOrWhiteSpace(node.Label) ? 1 : node.Label.Length;
     }
 }

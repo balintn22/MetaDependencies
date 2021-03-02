@@ -4,10 +4,10 @@ namespace Dgml
 {
     public static class DirectedGraphNodeExtensions
     {
-        public static RectangleF? GetBoundingRect(this DirectedGraphNode self)
+        public static RectangleF GetBoundingRect(this DirectedGraphNode self)
         {
             if (string.IsNullOrWhiteSpace(self.Bounds))
-                return null;
+                return new RectangleF(0, 0, 0, 0);
 
             string[] tokens = self.Bounds.Split(',');
             float left = float.Parse(tokens[0]);
@@ -26,7 +26,7 @@ namespace Dgml
         /// <summary>Mutates a node by shifting its bounding rect.</summary>
         public static void Shift(this DirectedGraphNode self, double dx, double dy)
         {
-            RectangleF nodeBounds = self.GetBoundingRect() ?? new RectangleF(0, 0, 0, 0);
+            RectangleF nodeBounds = self.GetBoundingRect();
             nodeBounds.X += (float)dx;
             nodeBounds.Y += (float)dy;
             self.SetBoundingRect(nodeBounds);

@@ -40,8 +40,6 @@ namespace GravityLayout.Logic.Test.Physics
                 }
             };
 
-            repo.Save(graph, $@"c:\balint\waste\output.00.dgml");
-
             var layouter = new GravityLayouter(
                 ropeLength, ropeStrength, Rope.Characteristics.Linear, ag);
             layouter.Layout(graph, stopShiftThreshold, maxIterationCount, (i) =>
@@ -50,8 +48,8 @@ namespace GravityLayout.Logic.Test.Physics
                 repo.Save(i.Graph, $@"c:\balint\waste\output.{i.Count:00}.dgml");
             });
 
-            node1.GetBoundingRect().Value.X.Should().BeLessThan(-100, "AG should blow this node down negative X, and rope should extend a bit.");
-            node2.GetBoundingRect().Value.X.Should().BeGreaterThan(100, "AG should blow this node up positive X, and rope should extend a bit.");
+            node1.GetBoundingRect().X.Should().BeLessThan(-100, "AG should blow this node down negative X, and rope should extend a bit.");
+            node2.GetBoundingRect().X.Should().BeGreaterThan(100, "AG should blow this node up positive X, and rope should extend a bit.");
         }
 
         [TestMethod]
@@ -94,14 +92,38 @@ namespace GravityLayout.Logic.Test.Physics
         #region Complex Tests
 
         [TestMethod]
+        [DeploymentItem("FullyConnectedAsQuickClusters.dgml")]
+        public void Layout_FullyConnectedGraph_RunsWithoutErrors()
+        {
+            double ropeLength = 100.0;
+            double ropeStrength = 1;
+            Rope.Characteristics ropeCharacteristic = Rope.Characteristics.Quadratic;
+            double ag = 0.0000000000000000000001;
+            double stopShiftThreshold = 0.00000001;
+            int maxIterationCount = 10;
+
+            var repo = new DgmlRepo();
+            DirectedGraph graph = repo.Load("FullyConnectedAsQuickClusters.dgml");
+
+            var layouter = new GravityLayouter(ropeLength, ropeStrength, ropeCharacteristic, ag);
+            layouter.Layout(graph, stopShiftThreshold, maxIterationCount, (i) =>
+            {
+                Trace.WriteLine(i);
+                repo.Save(i.Graph, $@"c:\balint\waste\output.{i.Count:00}.dgml");
+            });
+
+            repo.Save(graph, @"c:\balint\waste\output.dgml");
+        }
+
+        [TestMethod]
         [DeploymentItem("DgmlWithBounds.dgml")]
-        public void Layout_ForDgmlWithBounds_RunsWithoutErrors()
+        public void Layout_NonFullyConnectedGraph_RunsWithoutErrors()
         {
             double ropeLength = 50.0;
             double ropeStrength = 1;
-            double ag = 0.00000000000000000001;
+            double ag = 0.0000000000000000000000000001;
             double stopShiftThreshold = 0.00000001;
-            int maxIterationCount = 1000;
+            int maxIterationCount = 10;
 
             var repo = new DgmlRepo();
             DirectedGraph graph = repo.Load("DgmlWithBounds.dgml");
@@ -110,7 +132,7 @@ namespace GravityLayout.Logic.Test.Physics
             layouter.Layout(graph, stopShiftThreshold, maxIterationCount, (i) =>
             {
                 Trace.WriteLine(i);
-                //repo.Save(i.Graph, $@"c:\balint\waste\output.{i.Count:00}.dgml");
+                repo.Save(i.Graph, $@"c:\balint\waste\output.{i.Count:00}.dgml");
             });
             
             repo.Save(graph, @"c:\balint\waste\output.dgml");
