@@ -41,21 +41,20 @@ namespace GravityLayout.Logic
         /// one below another.
         /// </summary>
         /// <param name="graph"></param>
+        /// <param name="stopShiftThreshold">If node shifts are all below this threshold, the iteration stops.</param>
+        /// <param name="maxIterationCount">The maximum iteration count, after which layouting stops even if there are big node shifts.</param>
+        /// <param name="iterationCallBack">Optional. An action called after each iteration.</param>
         /// <returns>A new graph laid out such that edges cross as little as possible.</returns>
-        public DirectedGraph Layout(DirectedGraph graph)
+        public DirectedGraph Layout(
+            DirectedGraph graph,
+            double stopShiftThreshold,
+            int maxIterationCount,
+            Action<IterationResult> iterationCallBack)
         {
             // Split to a set of fully connected sub-graphs
-            var connectedSubGraphs = GraphManipulator.SplitToConnectedSubGraphs(graph).ToList();
-
-            // Layout individual fully connected graphs
-            foreach (var subGraph in connectedSubGraphs)
-                LayoutFullyConnected(subGraph, 1, 100);
-
-            // Place them one under another
-            Stack(connectedSubGraphs.ToList());
-
-            // Merge them
-            return Merge(connectedSubGraphs);
+            var parts = GraphManipulator.SplitToConnectedSubGraphs(graph).ToList();
+            return LayoutFullyConnectedGraphs(
+                parts, stopShiftThreshold, maxIterationCount, iterationCallBack);
         }
 
 
@@ -113,48 +112,85 @@ namespace GravityLayout.Logic
         }
 
         /// <summary>
-        /// Lays out a graph assuming it is fully connected.
-        /// Mutates the original.
+        /// Lays out a set of graphs, where each part must be fully connected,
+        /// but parts are not connected.
         /// </summary>
-        /// <param name="graph"></param>
+        /// <param name="parts">A collection of individually fully connected sub-graphs.</param>
         /// <param name="stopShiftThreshold">If node shifts are all below this threshold, the iteration stops.</param>
         /// <param name="maxIterationCount">The maximum iteration count, after which layouting stops even if there are big node shifts.</param>
-        /// <returns></returns>
-        private void LayoutFullyConnected(
-            DirectedGraph graph,
+        /// <param name="iterationCallback">Optional. An action called after each iteration.</param>
+        private DirectedGraph LayoutFullyConnectedGraphs(
+            IEnumerable<DirectedGraph> parts,
             double stopShiftThreshold,
-            int maxIterationCount)
+            int maxIterationCount,
+            Action<IterationResult> iterationCallback)
         {
-            bool anyBigShifts = true;
-            double maxShift;  // TODO: This can be removed. It is only there to visualize the amount of wobble
-            for (int i = 0; i < maxIterationCount && anyBigShifts; i++)
+            DirectedGraph merged = null;
+
+            for (int i = 1; i < maxIterationCount; i++)
             {
-                anyBigShifts = false;
-                maxShift = 0;
+                var iResult = new IterationResult { Count = i };
 
-                var nodeForces = CalculateNodeForces(graph);
-                foreach (var node in graph.Nodes)
+                // Layout individual fully connected graphs
+                foreach (var subGraph in parts)
                 {
-                    if (nodeForces.ContainsKey(node))
-                    {
-                        Force nodeForce = nodeForces[node];
-                        Shift nodeShift = (Shift)(Vector)nodeForce;  // TODO: Any multipliers to represent running longer then a second?
-                        ShiftNode(node, nodeShift);
+                    var partIResult = FullyConnectedGraphIterationStep(subGraph);
+                    iResult.MaxShift = Math.Max(iResult.MaxShift, partIResult.MaxShift);
+                    iResult.MaxForce = Math.Max(iResult.MaxForce, partIResult.MaxForce);
+                }
 
-                        if (!anyBigShifts && ((Vector)nodeShift).Length > stopShiftThreshold)
-                            anyBigShifts = true;
+                // Place them one under another
+                Stack(parts.ToList());
 
-                        maxShift = Math.Max(maxShift, ((Vector)nodeShift).Length);
-                    }
+                // Merge them into a single graph
+                merged = Merge(parts.ToList());
+
+                iResult.Graph = merged;
+                if(iterationCallback != null)
+                    iterationCallback(iResult);
+
+                if (iResult.MaxShift < stopShiftThreshold)
+                    break;
+            }
+
+            if (merged != null)
+            {
+                foreach (var link in merged.Links)
+                    link.Label = null;
+            }
+            return merged;
+        }
+
+        /// <summary>
+        /// Performs one iteration of layouting of a graph assuming it is fully connected.
+        /// Mutates the original.
+        /// </summary>
+        private IterationResult FullyConnectedGraphIterationStep(DirectedGraph graph)
+        {
+            var ret = new IterationResult();
+            var nodeForces = NodeForces(graph);
+            foreach (var node in graph.Nodes)
+            {
+                if (nodeForces.ContainsKey(node))
+                {
+                    Force nodeForce = nodeForces[node];
+                    Vector shift = (Vector)nodeForce;  // TODO: Any multipliers to represent running longer then a second?
+                    // TEST: Limit node shift
+                    node.Shift(shift.X, shift.Y);
+
+                    ret.MaxShift = Math.Max(ret.MaxShift, shift.Length);
+                    ret.MaxForce = Math.Max(ret.MaxForce, nodeForce.Magnitude);
                 }
             }
+            ret.Graph = graph;
+            return ret;
         }
 
         /// <summary>
         /// Calculates the resultant forces at each node.
         /// </summary>
         /// <returns>Dictionary of resultant forces by node id.</returns>
-        private Dictionary<DirectedGraphNode, Force> CalculateNodeForces(
+        private Dictionary<DirectedGraphNode, Force> NodeForces(
             DirectedGraph graph)
         {
             var ret = new Dictionary<DirectedGraphNode, Force>();
@@ -217,6 +253,7 @@ namespace GravityLayout.Logic
                 Position pA = GetCenter(boundsA);
                 Position pB = GetCenter(boundsB);
                 (Force fA, Force fB) = rope.CalculateForces(pA, pB);
+                link.Label = fA.Magnitude.ToString();   // Debug: display rope force on link
                 yield return (nodeA, fA);
                 yield return (nodeB, fB);
             }
@@ -228,16 +265,7 @@ namespace GravityLayout.Logic
                 return new Position(0, 0);
 
             RectangleF r = (RectangleF)rect;
-            return new Position((r.Top + r.Bottom) / 2.0, (r.Left + r.Right) / 2.0);
-        }
-
-        /// <summary>Mutates a node by shifting its bounding rect.</summary>
-        private void ShiftNode(DirectedGraphNode node, Shift shift)
-        {
-            RectangleF nodeBounds = node.GetBoundingRect() ?? new RectangleF(0, 0, 0, 0);
-            nodeBounds.X += (float)shift.DX;
-            nodeBounds.Y += (float)shift.DY;
-            node.SetBoundingRect(nodeBounds);
+            return new Position((r.Left + r.Right) / 2.0, (r.Top + r.Bottom) / 2.0);
         }
 
         private double GetMass(DirectedGraphNode node) =>

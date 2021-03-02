@@ -1,11 +1,9 @@
 ﻿using Dgml;
 using GravityLayout.Logic;
+using GravityLayout.Logic.Physics;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GravityLayout
 {
@@ -40,10 +38,16 @@ namespace GravityLayout
                 return;
             }
 
-            Dgml.DirectedGraph graph = _dgmlRepo.Load(_inputPath);
+            DirectedGraph graph = _dgmlRepo.Load(_inputPath);
             var layouter = new GravityLayouter(100, 1, Rope.Characteristics.Linear, 1);
-            Dgml.DirectedGraph result = layouter.Layout(graph);
+            DirectedGraph result = layouter.Layout(graph, 1, 100, PrintIterationInfo);
             _dgmlRepo.Save(result, _outputPath);
+        }
+
+        private static void PrintIterationInfo(IterationResult iResult)
+        {
+            var bounds = iResult.Graph.GetBoundingRect();
+            Console.WriteLine($"{iResult.Count}.\tMaxShift: {iResult.MaxShift}\tBounds: ({bounds?.Width} x {bounds?.Height})");
         }
 
         private static void ShowUsage()

@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DirectedGraph.cs" />
+    <Compile Include="DirectedGraphNodeExtensions.cs" />
     <Compile Include="GraphManipulator.cs" />
     <Compile Include="DirectedGraphLink.cs" />
     <Compile Include="DirectedGraphNode.cs" />

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <DirectedGraph GraphDirection="BottomToTop" xsd="http://www.w3.org/2001/XMLSchema" xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
   <Nodes>
-    <Node Id="fluentvalidation" Category="Normal" Bounds="5063.50992723115,391.7199104502,125.15,25.96" Icon="CodeSchema_Assembly" Label="FluentValidation" ProcessorArchitecture="MSIL" />
+    <Node Id="fluentvalidation" Category="Normal" Bounds="5063.50992723115,391.7199104502,125.15,25.96" Icon="CodeSchema_Assembly" Label="FluentValidation" ProcessorArchitecture="MSIL" UseManualLocation="True" />
     <Node Id="goodfellow.cryptographyservices" Category="Normal" Bounds="2070.86077799479,195.117163170138,218.456666666666,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.CryptographyServices" ProcessorArchitecture="MSIL" />
     <Node Id="goodfellow.cryptographyservices.client" Category="Normal" Bounds="1846.17752601624,251.077266235352,251.433333333333,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.CryptographyServices.Client" ProcessorArchitecture="MSIL" />
     <Node Id="goodfellow.cryptographyservices.entityframework" Category="Normal" Bounds="1194.24122233073,166.879417499222,309.356666666667,25.96" Icon="CodeSchema_Assembly" Label="Goodfellow.CryptographyServices.EntityFramework" ProcessorArchitecture="MSIL" />
@@ -160,7 +160,7 @@
     <Node Id="swashbuckle.aspnetcore.swaggerui" Category="Normal" Bounds="6291.5726,111.920115204943,233.713333333333,25.96" Icon="CodeSchema_Assembly" Label="Swashbuckle.AspNetCore.SwaggerUI" ProcessorArchitecture="MSIL" />
   </Nodes>
   <Links>
-    <Link Source="goodfellow.cryptographyservices" Target="goodfellow.cryptographyservices.infrastructure" Bounds="1946.6240234375,221.0771484375,208.721923828125,109.970642089844" />
+    <Link Label="3.1.0.0" TargetNodeDetails="MyPinPad.Services.Azure, Version=1.3.3.0, Culture=neutral, PublicKeyToken=null" SourceNodeDetails="MyPinPad.Services.Logging, Version=1.2.1.0, Culture=neutral, PublicKeyToken=null" Source="goodfellow.cryptographyservices" Target="goodfellow.cryptographyservices.infrastructure" Bounds="1946.6240234375,221.0771484375,208.721923828125,109.970642089844" />
     <Link Source="goodfellow.cryptographyservices" Target="goodfellow.dukptaes" Bounds="2252.58325195313,221.0771484375,1472.66357421875,112.616241455078" />
     <Link Source="goodfellow.cryptographyservices" Target="goodfellow.esl" Bounds="2252.58325195313,221.0771484375,886.920166015625,110.310882568359" />
     <Link Source="goodfellow.cryptographyservices" Target="goodfellow.hsmservices.client" Bounds="1438.75756835938,218.52197265625,632.136474609375,60.1289672851563" />
